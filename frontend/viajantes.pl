@@ -19,7 +19,7 @@ form1(_Pedido) :-
                  div([class='row justify-content-start mx-3'],
                        [
                        div([class='col-md-3'],[div([class='form-floating mb-3'],
-                           [ input([type=textarea, class='form-control', style='max-width: 350px', id='floatingInputGrid',placeholder='name@example.com',name=email]),
+                           [ input([type=email, class='form-control', style='max-width: 350px', id='floatingInputGrid',placeholder='name@example.com',name=email]),
                              label([for='floatingInputGrid'],'Email') ]) ]),
                        div([class='col-md-3'],[div([class='form-floating mb-3'],
                            [ input([type='password', type=textarea, class='form-control', style='max-width: 200px', id='floatingInputGrid',placeholder='**********',name=senha]),
