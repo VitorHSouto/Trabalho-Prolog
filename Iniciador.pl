@@ -10,7 +10,7 @@
                 api1(locaisApi),           /**/
                 api1(viajantesApi),
                 frontend(motoristas),
-                frontend(viagens),
+                frontend(alocacao),
                 frontend(veiculo)
               ],                           /**/
               [ silent(true),              /**/
