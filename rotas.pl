@@ -87,7 +87,12 @@ http:location(webfonts, root(webfonts), []).
                 [ method(Method),
                   methods([post]) ]).
 
+
 :- http_handler('/receptorF4', recebe_form4(Method),
+                [ method(Method),
+                  methods([post]) ]).
+
+:- http_handler('/receptorF6', recebe_form6(Method),
                 [ method(Method),
                   methods([post]) ]).
 
@@ -101,6 +106,7 @@ http:location(webfonts, root(webfonts), []).
 
 :- http_handler( root(veiculo), form3, []).
 :- http_handler( root(motoristas), form4, []).
+:- http_handler( root(viagens), form6, []).
 
 :- http_handler( root(veiculo/editar/Id), editarVeiculo(Id), []).
 :- http_handler( root(veiculo/apagar/Id), apagarVeiculo(Id), []).

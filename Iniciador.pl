@@ -27,6 +27,7 @@
 :- use_module(bd(motoristas)).
 :- use_module(bd(veiculo)).
 :- use_module(bd(pessoa_por_viagem)).
+:- use_module(bd(viagens)).
 
 :- use_module(library(http/thread_httpd)).
 :- use_module(library(http/http_dispatch)).
