@@ -37,6 +37,7 @@ home(_Pedido) :-
                 li([], a([ class(['dropdown-item']),href('/form5')],'Formulario 5 ')),
                 li([], a([ class(['dropdown-item']),href('/form6')],'Formulario 6 '))
               ])
+              ])
             ])
           ]),
         ]).
