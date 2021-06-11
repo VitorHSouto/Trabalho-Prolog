@@ -6,14 +6,14 @@ tbl_locais(_Pedido) :-
         bootstrap,
         [title('Tabela')],
         [
-            table([class='table'],
+            table([class='table table-striped table-bordered table-condensed table-hover'],
                 [
                     thead([], [
                         tr([],[
                             th([scope="col"], "#Id"),
                             th([scope="col"], "Cidade"),
                             th([scope="col"], "Cep"),
-                            th([scope="col"], "Endereço")
+                            th([scope="col"], "Endereï¿½o")
                         ]) ]),
                     tbody([], \corpo_tabela_lcl)
                 ]),
@@ -55,7 +55,7 @@ editarLocs(AtomId,_Pedido) :-
         bootstrap,
         [title('Atualiza Cadastro Locais')],
         [
-            h1([class='row mx-3 p'],'Formulário 2'), p([],[]),
+            h1([class='row mx-3 p'],'Formulï¿½rio 2'), p([],[]),
             h2([class='row mx-5 px-5 w-50 text-primary'],'Cadastrar locais'), p([],[]),
             form([action='/editarF2', method='POST'],
                   [ div([class='row justify-content-start mx-3'],
@@ -80,7 +80,7 @@ editarLocs(AtomId,_Pedido) :-
                           [
                           div([class='col'],[div([class='form-floating mb-3'],
                               [ input([type=textarea, class='form-control', style='max-width: 400px', id='floatingInputGrid',value=End,name=address]),
-                                label([for='floatingInputGrid'],'EndereÃço') ]) ])
+                                label([for='floatingInputGrid'],'Endereï¿½ï¿½o') ]) ])
                           ]),
                     div([class='row justify-content-start mx-3'],
                        [

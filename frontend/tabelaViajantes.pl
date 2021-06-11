@@ -3,7 +3,7 @@ tbl_viajantes(_Pedido) :-
         bootstrap,
         [title('Tabela')],
         [
-            table([class='table'],
+            table([class='table table-striped table-bordered table-condensed table-hover'],
                 [
                     thead([], [
                         tr([],[
@@ -13,11 +13,11 @@ tbl_viajantes(_Pedido) :-
                             th([scope="col"], "Funcao"),
                             th([scope="col"], "Email"),
                             th([scope="col"], "Senha"),
-                            th([scope="col"], "Nível de acesso")
+                            th([scope="col"], "Nï¿½vel de acesso")
                         ]) ]),
                     tbody([], \corpo_tabela_via)
                 ]),
-            div([], [a([class='btn btn-primary', href='/', style='width: 150px'], 'Voltar ao início')])
+            div([], [a([class='btn btn-primary', href='/', style='width: 150px'], 'Voltar ao inï¿½cio')])
         ]).
 
 
@@ -58,8 +58,8 @@ editarViajantes(AtomId,_Pedido) :-
     (viajantes(Id, Cpf, Nome, Funcao, Email, Senha, _Nvl_acesso) ->
     reply_html_page(
             bootstrap,
-            [title('Editar Formulário 1')],
-            [h1([class='row mx-3 p'],'Formulário 1'), p([],[]),
+            [title('Editar Formulï¿½rio 1')],
+            [h1([class='row mx-3 p'],'Formulï¿½rio 1'), p([],[]),
             h2([class='row mx-5 px-5 w-50 text-primary'],'Cadastrar viajantes'), p([],[]),
             form([action='/editarF1', method='POST'],
                 [ div([class='row justify-content-start mx-3'],
@@ -92,7 +92,7 @@ editarViajantes(AtomId,_Pedido) :-
                             [option([id='floatingSelectGrid', value='Colaborador'], 'Coloborador Enventual'),
                                 option([id='floatingSelectGrid', value='Servidor'], 'Servidor'),
                                 option([id='floatingSelectGrid', value='Tutor'], 'Tutor') ]),
-                            label([class='mx-2',for="floatingSelectGrid",value=Funcao],'Escolha a funcão') ]),
+                            label([class='mx-2',for="floatingSelectGrid",value=Funcao],'Escolha a funcï¿½o') ]),
                         p([class='col-md-2 mb-3 p-3'],
                         input([class='btn btn-success', style='width: 150px',name=submit, type=submit, value='Enviar'],
                                 []))
