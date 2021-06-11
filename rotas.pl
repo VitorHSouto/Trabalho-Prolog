@@ -34,6 +34,7 @@ http:location(webfonts, root(webfonts), []).
 :- http_handler(root(.), home , []).
 :- http_handler(root(form1), form1 , []).
 :- http_handler(root(form2), form2 , []).
+:- http_handler(root(form6), form6 , []).
 :- http_handler(root(tbl_viajantes), tbl_viajantes , []).
 :- http_handler(root(tbl_locais), tbl_locais , []).
 

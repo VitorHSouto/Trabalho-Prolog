@@ -3,8 +3,8 @@
 form1(_Pedido) :-
     reply_html_page(
         bootstrap,
-        [title('Formulário 1')],
-        [h1([class='row mx-3 p'],'Formulário 1'), p([],[]),
+        [title('Formulï¿½rio 1')],
+        [h1([class='row mx-3 p'],'Formulï¿½rio 1'), p([],[]),
          h2([class='row mx-5 px-5 w-50 text-primary'],'Cadastrar viajantes'), p([],[]),
          form([action='/receptorF1', method='POST'],
                [ div([class='row justify-content-start mx-3'],
@@ -31,7 +31,7 @@ form1(_Pedido) :-
                            [option([id='floatingSelectGrid', value='Colaborador'], 'Coloborador Enventual'),
                             option([id='floatingSelectGrid', value='Servidor'], 'Servidor'),
                             option([id='floatingSelectGrid', value='Tutor'], 'Tutor') ]),
-                           label([class='mx-2',for="floatingSelectGrid"],'Escolha a funcão') ]),
+                           label([class='mx-2',for="floatingSelectGrid"],'Escolha a funcï¿½o') ]),
                     p([class='col-md-2 mb-3 p-3'],
                        input([class='btn btn-success', style='width: 150px',name=submit, type=submit, value='Enviar'],
                              []))
