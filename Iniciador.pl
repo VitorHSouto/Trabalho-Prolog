@@ -6,10 +6,10 @@
                 rotas,                     /**/
                 frontend(inicio),          /**/
                 frontend(viajantes),       /**/
-                frontend(locais),          /**/
+                frontend(locais),     /**/
                 api1(locaisApi),           /**/
                 api1(viajantesApi),
-                frontend(motoristas),       
+                frontend(motoristas),
                 frontend(veiculo)
               ],                           /**/
               [ silent(true),              /**/
@@ -26,6 +26,7 @@
 :- use_module(bd(locais)).
 :- use_module(bd(motoristas)).
 :- use_module(bd(veiculo)).
+:- use_module(bd(pessoa_por_viagem)).
 
 :- use_module(library(http/thread_httpd)).
 :- use_module(library(http/http_dispatch)).

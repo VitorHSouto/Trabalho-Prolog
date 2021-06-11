@@ -32,5 +32,3 @@ remove_todos() :-
 
 sincroniza :-
     db_sync(gc(always)).
-
-%findall([Id, Cidade, Cep, End],locais(Id, Cidade, Cep, End),L)
