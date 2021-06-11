@@ -34,6 +34,7 @@ http:location(webfonts, root(webfonts), []).
 :- http_handler(root(.), home , []).
 :- http_handler(root(form1), form1 , []).
 :- http_handler(root(form2), form2 , []).
+:- http_handler(root(form5), form5 , []).
 :- http_handler(root(form6), form6 , []).
 :- http_handler(root(tbl_viajantes), tbl_viajantes , []).
 :- http_handler(root(tbl_locais), tbl_locais , []).
@@ -94,6 +95,10 @@ http:location(webfonts, root(webfonts), []).
                 [ method(Method),
                   methods([post]) ]).
 
+:- http_handler('/receptorF5', recebe_form5(Method),
+                [ method(Method),
+                  methods([post]) ]).
+
 :- http_handler('/receptorF6', recebe_form6(Method),
                 [ method(Method),
                   methods([post]) ]).
@@ -112,6 +117,7 @@ http:location(webfonts, root(webfonts), []).
 
 :- http_handler( root(veiculo), form3, []).
 :- http_handler( root(motoristas), form4, []).
+:- http_handler( root(viagens), form5, []).
 :- http_handler( root(alocacao), form6, []).
 
 :- http_handler( root(veiculo/editar/Id), editarVeiculo(Id), []).

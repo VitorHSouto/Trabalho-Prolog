@@ -13,13 +13,13 @@
                     dia_final:positive_integer,
 					mes_final:positive_integer,
 					ano_final:positive_integer,
-					siga:positive_integer,
-					scpd:positive_integer,
-					km_inicial:positive_integer,
-					km_final:positive_integer,
+					siga:atom,%voltar
+					scpd:atom,%voltar
+					km_inicial:atom,%voltar
+					km_final:atom,%voltar
                     hora_saida:atom,
                     hora_chegada:atom,
-                    km_utilizados:positive_integer,
+                    km_utilizados:atom,%voltar
                     observacao:atom,
                     id_veiculo:positive_integer,
                     id_motoristas:positive_integer,
