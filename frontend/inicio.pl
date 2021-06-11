@@ -30,12 +30,12 @@ home(_Pedido) :-
               div([button([ class='btn btn-dark dropdown-toggle', type='button', id='dropdownMenuButton', data-bs-toggle='dropdown', aria-expanded='false'], 'Formularios'),
               ul([ class='dropdown-menu', aria-labelledby='dropdownMenuButton'],
               [
-                li([], a([ class(['dropdown-item']),href('/form1')],'Formulario 1 ')),
-                li([], a([ class(['dropdown-item']),href('/form2')],'Formulario 2 ')),
-                li([], a([ class(['dropdown-item']),href('/form3')],'Formulario 3 ')),
-                li([], a([ class(['dropdown-item']),href('/form4')],'Formulario 4 ')),
-                li([], a([ class(['dropdown-item']),href('/form5')],'Formulario 5 ')),
-                li([], a([ class(['dropdown-item']),href('/form6')],'Formulario 6 '))
+                li([], a([ class(['dropdown-item']), href('/form1')], 'Formulario 1 ')),
+                li([], a([ class(['dropdown-item']), href('/form2')], 'Formulario 2 ')),
+                li([], a([ class(['dropdown-item']), href('/form3')], 'Formulario 3 ')),
+                li([], a([ class(['dropdown-item']), href('/form4')], 'Formulario 4 ')),
+                li([], a([ class(['dropdown-item']), href('/form5')], 'Formulario 5 ')),
+                li([], a([ class(['dropdown-item']), href('/form6')], 'Formulario 6 '))              
               ])
               ])
             ])
