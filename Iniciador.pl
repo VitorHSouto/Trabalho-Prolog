@@ -11,6 +11,7 @@
                 api1(viajantesApi),
                 frontend(motoristas),
                 frontend(alocacao),
+                frontend(viagens),
                 frontend(veiculo)
               ],                           /**/
               [ silent(true),              /**/
@@ -28,6 +29,7 @@
 :- use_module(bd(motoristas)).
 :- use_module(bd(veiculo)).
 :- use_module(bd(pessoa_por_viagem)).
+:- use_module(bd(viagens)).
 :- use_module(bd(alocacao)).
 
 :- use_module(library(http/thread_httpd)).
