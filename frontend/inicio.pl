@@ -34,6 +34,9 @@ home(_Pedido) :-
               href('/tbl_motoristas')],
               'Tabela do Formulario 4 ')),
               h3(a([ class(['nav-link']),
+              href('/form5')],
+              'Formulario 5 ')),
+              h3(a([ class(['nav-link']),
               href('/form6')],
               'Formulario 6 '))
         ]) ]).
