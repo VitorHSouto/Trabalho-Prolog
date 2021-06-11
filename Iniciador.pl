@@ -8,7 +8,9 @@
                 frontend(viajantes),       /**/
                 frontend(locais),          /**/
                 api1(locaisApi),           /**/
-                api1(viajantesApi)         /**/
+                api1(viajantesApi),
+                frontend(motoristas),       
+                frontend(veiculo)
               ],                           /**/
               [ silent(true),              /**/
                 if(not_loaded) ]).         /**/
@@ -22,6 +24,8 @@
 % Bancos de DADOS
 :- use_module(bd(viajantes)).
 :- use_module(bd(locais)).
+:- use_module(bd(motoristas)).
+:- use_module(bd(veiculo)).
 
 :- use_module(library(http/thread_httpd)).
 :- use_module(library(http/http_dispatch)).

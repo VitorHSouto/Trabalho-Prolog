@@ -27,18 +27,18 @@ corpo_tabela_vei -->
                         td(Modelo),
                         td(Placa),
                         td(Acoes)]),
-                 linhaV(Id, Ano, Marca, Modelo, Placa, Acoes),
+                 linhaVeic(Id, Ano, Marca, Modelo, Placa, Acoes),
                  Linhas )
     },
     html(Linhas).
 
 
-linhaV(Id, Ano, Marca, Modelo, Placa, AcoesV):-
+linhaVeic(Id, Ano, Marca, Modelo, Placa, AcoesV):-
     veiculo(Id, Ano, Marca, Modelo, Placa),
-    acoesV(Id,AcoesV).
+    acoesVeic(Id,AcoesV).
 
 
-acoesV(Id, Campo):-
+acoesVeic(Id, Campo):-
     Campo = [ a([ class('text-success'), title('Alterar'),
                   href('/veiculo/editar/~w' - Id),
                   'data-toggle'(tooltip)],

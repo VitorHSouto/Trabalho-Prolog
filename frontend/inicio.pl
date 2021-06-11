@@ -6,19 +6,31 @@
 home(_Pedido) :-
     reply_html_page(
         bootstrap,
-        [ title('Gestão de Viagens')],
-        [ h1([class='row mx-3'],'Proposta de desenvolvimento de software para gestão de viagens da DEAD/UFVJM - SIGEV'),
+        [ title('Gestï¿½o de Viagens')],
+        [ h1([class='row mx-3'],'Proposta de desenvolvimento de software para gestï¿½o de viagens da DEAD/UFVJM - SIGEV'),
           nav(class(['nav', 'flex-column','row mx-3 p-3']),
              [h3(a([ class(['nav-link']),
               href('/form1')],
-              'Formulário 1 ')),
+              'Formulï¿½rio 1 ')),
               h3(a([ class(['nav-link']),
               href('/form2')],
-              'Formulário 2 '))]),
+              'Formulï¿½rio 2 ')),
               h3(a([ class(['nav-link']),
               href('/tbl_viajantes')],
-              'Tabela do Formulário 1 ')),
+              'Tabela do Formulï¿½rio 1 ')),
               h3(a([ class(['nav-link']),
               href('/tbl_locais')],
-              'Tabela do Formulário 2 '))
-        ]).
+              'Tabela do Formulï¿½rio 2 ')),
+              h3(a([ class(['nav-link']),
+              href('/form3')],
+              'Formulario 3 ')),
+              h3(a([ class(['nav-link']),
+              href('/form4')],
+              'Formulario 4 ')),
+              h3(a([ class(['nav-link']),
+              href('/tbl_veiculo')],
+              'Tabela do Formulario 3 ')),
+              h3(a([ class(['nav-link']),
+              href('/tbl_motoristas')],
+              'Tabela do Formulario 4 '))
+        ]) ]).

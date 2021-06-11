@@ -37,7 +37,7 @@ http:location(webfonts, root(webfonts), []).
 :- http_handler(root(tbl_viajantes), tbl_viajantes , []).
 :- http_handler(root(tbl_locais), tbl_locais , []).
 
-
+%%%%%%%%%% FORM 1 E 2 %%%%%%%%%%%%%%
 % Backend
 :- http_handler('/receptorF1', recebe_form1(Method),
                 [ method(Method),
@@ -72,5 +72,47 @@ http:location(webfonts, root(webfonts), []).
                    methods([ get, post, put, delete ]) ]).
 
 :- http_handler( api1(viajante/Id), viajante(Metodo, Id),
+                [ method(Metodo),
+                methods([ get, post, put, delete ]) ]).
+
+
+%%%%%%%%%% FORM 3 E 4 %%%%%%%%%%%%%%
+:- http_handler(root(form3), form3 , []).
+:- http_handler(root(form4), form4 , []).
+:- http_handler(root(tbl_veiculo), tbl_veiculo , []).
+:- http_handler(root(tbl_motoristas), tbl_motoristas , []).
+
+
+:- http_handler('/receptorF3', recebe_form3(Method),
+                [ method(Method),
+                  methods([post]) ]).
+
+:- http_handler('/receptorF4', recebe_form4(Method),
+                [ method(Method),
+                  methods([post]) ]).
+
+:- http_handler('/editarF3', editar_form3(Method),
+                [ method(Method),
+                  methods([post]) ]).
+
+:- http_handler('/editarF4', editar_form4(Method),
+                [ method(Method),
+                  methods([post]) ]).
+
+:- http_handler( root(veiculo), form3, []).
+:- http_handler( root(motoristas), form4, []).
+
+:- http_handler( root(veiculo/editar/Id), editarVeiculo(Id), []).
+:- http_handler( root(veiculo/apagar/Id), apagarVeiculo(Id), []).
+
+:- http_handler( root(motoristas/editar/Id), editarMotoristas(Id), []).
+:- http_handler( root(motoristas/apagar/Id), apagarMotoristas(Id), []).
+
+
+:- http_handler( api1(veiculo/Id), veiculo(Metodo, Id),
+                 [ method(Metodo),
+                   methods([ get, post, put, delete ]) ]).
+
+:- http_handler( api1(motoristas/Id), motoristas(Metodo, Id),
                 [ method(Metodo),
                 methods([ get, post, put, delete ]) ]).
