@@ -18,7 +18,9 @@ home(_Pedido) :-
                 li([], a([ class(['dropdown-item']), href('/tbl_viajantes')], 'Tabela do Formulario 1 ')),
                 li([], a([ class(['dropdown-item']), href('/tbl_locais')], 'Tabela do Formulario 2 ')),
                 li([], a([ class(['dropdown-item']), href('/tbl_veiculo')], 'Tabela do Formulario 3 ')),
-                li([], a([ class(['dropdown-item']), href('/tbl_motoristas')], 'Tabela do Formulario 4 '))
+                li([], a([ class(['dropdown-item']), href('/tbl_motoristas')], 'Tabela do Formulario 4 ')),
+                li([], a([ class(['dropdown-item']), href('/tbl_viagens')], 'Tabela do Formulario 5 ')),
+              li([], a([ class(['dropdown-item']), href('/tbl_alocacao')], 'Tabela do Formulario 6 '))
               ])
               ])
             ])
