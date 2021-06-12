@@ -39,6 +39,7 @@ http:location(webfonts, root(webfonts), []).
 :- http_handler(root(tbl_viajantes), tbl_viajantes , []).
 :- http_handler(root(tbl_locais), tbl_locais , []).
 :- http_handler(root(tbl_alocacao), tbl_alocacao , []).
+:- http_handler(root(tbl_viagens), tbl_viagens , []).
 
 %%%%%%%%%% FORM 1 E 2 %%%%%%%%%%%%%%
 % Backend
@@ -111,6 +112,10 @@ http:location(webfonts, root(webfonts), []).
                 [ method(Method),
                   methods([post]) ]).
 
+:- http_handler('/editarF5', editar_form5(Method),
+                [ method(Method),
+                  methods([post]) ]).
+
 :- http_handler('/editarF6', editar_form6(Method),
                 [ method(Method),
                   methods([post]) ]).
@@ -128,6 +133,9 @@ http:location(webfonts, root(webfonts), []).
 
 :- http_handler( root(alocacao/editar/Id), editarAlocacao(Id), []).
 :- http_handler( root(alocacao/apagar/Id), apagarAlocacao(Id), []).
+
+:- http_handler( root(viagens/editar/Id), editarViagem(Id), []).
+:- http_handler( root(viagens/apagar/Id), apagarViagem(Id), []).
 
 
 :- http_handler( api1(veiculo/Id), veiculo(Metodo, Id),

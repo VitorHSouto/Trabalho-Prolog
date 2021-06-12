@@ -1,4 +1,4 @@
-:- consult(tabelaLocais).
+:- consult(tabelaViagens).
 
 form5(_Pedido) :-
     reply_html_page(
@@ -6,21 +6,24 @@ form5(_Pedido) :-
         [title('Formulario 5')],
         [h1([class='row mx-3 p'],'Formulario 5'), p([],[]),
          h2([class='row mx-5 px-5 w-50 text-primary'],'Cadastrar viagens'), p([],[]),
-         form([action='/receptorF5', method='POST'], \form_viagens)
+         form([action='/receptorF5', method='POST'], 
+             \form_viagens('', '', '', '', '', '', '', '', '', '',
+            '', '', '', '', '', '', '', '', '', '', ''))
             ]).
 
-form_viagens -->
+form_viagens(_, _, _, _, _DInicio, _MInicio, _AInicio, _DFinal, _MFinal, _AFinal,
+    Siga, Scpd, KmInicio, KmFinal, HSaida, HChegada, KmUtilizado, Obs, _, _, _) -->
     {},
     html(
             div([],[
             %%%% Label LOCAIS ORIGEM %%%%
             div([class='form-floating col-md-2'], [
-                select([class='form-select',name='origem', value='Cidade 1', id='floatingSelectGrid'],
+                select([class='form-select',name=origem, value='Cidade 1', id='floatingSelectGrid'],
                 \locais_html),
                 label([class='mx-2',for="floatingSelectGrid"],'Origem')]),
             %%%% Label LOCAIS DESTINO %%%%
             div([class='form-floating col-md-2'], [
-                select([class='form-select',name='destino', value='Cidade 1', id='floatingSelectGrid'],
+                select([class='form-select',name=destino, value='Cidade 1', id='floatingSelectGrid'],
                 \locais_html),
                 label([class='mx-2',for="floatingSelectGrid"],'Destino')]),
             %%% Data SAIDA
@@ -43,11 +46,11 @@ form_viagens -->
             %%% Qt. Diarias
             div([class='form-floating col-md-2'], [
                 select([class='form-select',name='qtDia', value='1', id='floatingSelectGrid'],
-                [option([id='floatingSelectGrid', value='1'], '1'),
-                option([id='floatingSelectGrid', value='2'], '2'),
-                option([id='floatingSelectGrid', value='3'], '3'),
-                option([id='floatingSelectGrid', value='4'], '4'),
-                option([id='floatingSelectGrid', value='5'], '5') ]),
+                [option([value='1'], '1'),
+                option([value='2'], '2'),
+                option([value='3'], '3'),
+                option([value='4'], '4'),
+                option([value='5'], '5') ]),
                 label([class='mx-2',for="floatingSelectGrid"],'Qt. Diárias')]),
             %%% Função
             div([class='form-floating col-md-2'], [
@@ -57,27 +60,27 @@ form_viagens -->
                 label([class='mx-2',for="floatingSelectGrid"],'Função')]),
             %%% NMR SIGA
             div([class='form-floating col-md-2'],
-                [input([type=textarea, class='form-control', style='max-width:300px', id='floatingInputGrid',placeholder='1234',name=siga]),
+                [input([type=textarea, class='form-control', style='max-width:300px', value=Siga, id='floatingInputGrid',placeholder='1234',name=siga]),
                 label([for='floatingInputGrid'],'Nmr SIGA') ]),
             %%% NMR SCPD
             div([class='form-floating col-md-2'],
-                [input([type=textarea, class='form-control', style='max-width:300px', id='floatingInputGrid',placeholder='1234',name=scpd]),
+                [input([type=textarea, class='form-control', style='max-width:300px', value=Scpd, id='floatingInputGrid',placeholder='1234',name=scpd]),
                 label([for='floatingInputGrid'],'Nmr SCDP') ]),
             %%% Km Inicial
             div([class='form-floating col-md-2'],
-                [input([type=textarea, class='form-control', style='max-width:300px', id='floatingInputGrid',placeholder='1234',name=kmi]),
+                [input([type=textarea, class='form-control', style='max-width:300px', value=KmInicio, id='floatingInputGrid',placeholder='1234',name=kmi]),
                 label([for='floatingInputGrid'],'Km Inicial') ]),
             %%% Km Final
             div([class='form-floating col-md-2'],
-                [input([type=textarea, class='form-control', style='max-width:300px', id='floatingInputGrid',placeholder='1234',name=kmf]),
+                [input([type=textarea, class='form-control', style='max-width:300px', value=KmFinal, id='floatingInputGrid',placeholder='1234',name=kmf]),
                 label([for='floatingInputGrid'],'Km Final') ]),
             %%% Horario SAIDA
             div([class='form-floating col-md-2'],
-                [input([type=textarea, class='form-control', style='max-width:300px', id='floatingInputGrid',placeholder='--:--',name=hSaida]),
+                [input([type=textarea, class='form-control', style='max-width:300px', value=HSaida, id='floatingInputGrid',placeholder='--:--',name=hSaida]),
                 label([for='floatingInputGrid'],'Horario de Saida') ]),
             %%% Horario Chegada
             div([class='form-floating col-md-2'],
-                [input([type=textarea, class='form-control', style='max-width:300px', id='floatingInputGrid',placeholder='--:--',name=hChegada]),
+                [input([type=textarea, class='form-control', style='max-width:300px', value=HChegada, id='floatingInputGrid',placeholder='--:--',name=hChegada]),
                 label([for='floatingInputGrid'],'Horario de Chegada') ]),
             %%%% Label MOTORISTAS %%%%
             div([class='form-floating col-md-2'], [
@@ -100,11 +103,11 @@ form_viagens -->
                 label([class='mx-2',for="floatingSelectGrid"],'Diarias Emp')]),
             %%% Km Uti
             div([class='form-floating col-md-2'],
-                [input([type=textarea, class='form-control', style='max-width:300px', id='floatingInputGrid',placeholder='--:--',name=kmUl]),
+                [input([type=textarea, class='form-control', style='max-width:300px', value=KmUtilizado, id='floatingInputGrid',placeholder='--:--',name=kmUl]),
                 label([for='floatingInputGrid'],'Km Utilizado') ]),
             %%% OBSERVAÇÕES
             div([class='form-floating mb-3'],
-                [input([type=textarea, class='form-control', style='height: 200px; width: 400px', id='floatingInputGrid', placeholder=' 00/00/0000',name=obs]),
+                [input([type=textarea, class='form-control', style='height: 200px; width: 400px', value=Obs, id='floatingInputGrid', placeholder='Exemplo',name=obs]),
                 label([for='floatingInputGrid'],'Observacoes') ]),
             %%%%%% BOTOES
             div([class='row justify-content-start mx-3'],
@@ -149,12 +152,14 @@ recebe_form5(post, Pedido) :-
         veiculo(IdVeic, _Ano, Veiculo, _Modelo, _Placa),
         motoristas(IdMot, Motorista, _Cpf, _Num_cnh, _Data_pri_habili),
         locais(IdLoc,Destino,_,_),
-        viagens:insere(Id_viagens,'Data',Origem,Destino,DI,MI,AI,DF,MF,AF,Siga,Scpd,Kmi,Kmf,
+        get_time(T),
+        atom_number(AtomT, T),
+        viagens:insere(Id_viagens,AtomT,Origem,Destino,DI,MI,AI,DF,MF,AF,Siga,Scpd,Kmi,Kmf,
                         HSaida,HChegada,KmUl,Obs,IdVeic,IdMot,IdLoc),
         viajantes(Id_viajantes, _, Viajante, _, _, _, _),
         atom_number(AtomQtDiarias, QtDiarias),
         pessoaPorViagem:insere(_, Id_viagens, Id_viajantes, QtDiarias, Funcao),
-        home(_).
+        tbl_viagens(_).
 
 devolve_data(Data,Dia,Mes,Ano) :-
     atom_chars(Data, [E1,E2,E3,E4,_E5,E6,E7,_E8,E9,E10]),
@@ -164,8 +169,23 @@ devolve_data(Data,Dia,Mes,Ano) :-
 
 editar_form5(post, Pedido) :-
       http_read_data(Pedido,
-                      [id=AtomId, city=Cidade, cep=Cep, address=End, submit='Enviar']
+                      [id=AtomId,origem=Origem,destino=Destino,data_inicio=DInicio,data_final=DFinal,viajante=Viajante,
+                      qtDia=_QtDia,funcao=Funcao,siga=Siga,scpd=Scpd,kmi=Kmi,kmf=Kmf,hSaida=HSaida,hChegada=HChegada,
+                      motorista=Motorista,veiculo=Veiculo,qtDiarias=AtomQtDiarias,kmUl=KmUl,obs=Obs,
+                    submit='Enviar']
                       , []),
-      atom_number(AtomId, Id),
-      locais:atualiza(Id,Cidade,Cep,End),
-      tbl_locais(_).
+        devolve_data(DInicio,DI,MI,AI),
+        devolve_data(DFinal,DF,MF,AF),
+        veiculo(IdVeic, _Ano, Veiculo, _Modelo, _Placa),
+        motoristas(IdMot, Motorista, _Cpf, _Num_cnh, _Data_pri_habili),
+        locais(IdLoc,Destino,_,_),
+        get_time(T),
+        atom_number(AtomT, T),
+        atom_number(AtomId, Id),
+        viagens:atualiza(Id,AtomT,Origem,Destino,DI,MI,AI,DF,MF,AF,Siga,Scpd,Kmi,Kmf,
+                        HSaida,HChegada,KmUl,Obs,IdVeic,IdMot,IdLoc),
+        viajantes(Id_viajantes, _, Viajante, _, _, _, _),
+        atom_number(AtomQtDiarias, QtDiarias),
+        pessoaPorViagem:remove(Id),
+        pessoaPorViagem:insere(_, Id, Id_viajantes, QtDiarias, Funcao),
+        tbl_viagens(_).

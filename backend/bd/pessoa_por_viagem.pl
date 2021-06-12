@@ -19,7 +19,7 @@ insere(Id, Id_viagens, Id_viajantes, Diarias, Funcao) :-
 
 remove(Id) :-
 	with_mutex(pessoa_por_viagem_key,
-		   retractall_pessoaPorViagem(Id, _, _, _, _)).
+		   retractall_pessoaPorViagem(_, Id, _, _, _)).
 
 atualiza(Id, Id_viagens, Id_viajantes, Diarias, Funcao) :-
 	with_mutex(pessoa_por_viagem_key,
