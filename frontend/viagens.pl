@@ -15,108 +15,185 @@ form_viagens(_, _, _, _, _DInicio, _MInicio, _AInicio, _DFinal, _MFinal, _AFinal
     Siga, Scpd, KmInicio, KmFinal, HSaida, HChegada, KmUtilizado, Obs, _, _, _) -->
     {},
     html(
-            div([],[
+            div([],
+            [
             %%%% Label LOCAIS ORIGEM %%%%
-            div([class='form-floating col-md-2'], [
+            br([],[]),
+            div([class='row justify-content-center mx-3'],
+            [
+            div([class='form-floating col-4'], [
                 select([class='form-select',name=origem, value='Cidade 1', id='floatingSelectGrid'],
                 \locais_html),
-                label([class='mx-2',for="floatingSelectGrid"],'Origem')]),
+                label([class='mx-2',for="floatingSelectGrid"],' Origem')])
+            ]),
             %%%% Label LOCAIS DESTINO %%%%
-            div([class='form-floating col-md-2'], [
+            br([],[]),
+            div([class='row justify-content-center mx-3'],
+            [
+            div([class='form-floating col-4'], [
                 select([class='form-select',name=destino, value='Cidade 1', id='floatingSelectGrid'],
                 \locais_html),
-                label([class='mx-2',for="floatingSelectGrid"],'Destino')]),
+                label([class='mx-2',for="floatingSelectGrid"],' Destino')])
+            ]),
             %%% Data SAIDA
-            div([class='form-floating col-md-2'],
+            br([],[]),
+            div([class='row justify-content-center mx-3'],
+            [
+            div([class='form-floating col-4'],
                 [input([type=date, type=textarea, class='form-control'/*, value=DSaida*/, style='max-width: 350px', id='floatingInputGrid', placeholder=' 00/00/0000',name=data_inicio]),
-                label([for='floatingInputGrid'],'Data inicio') ]),
+                label([for='floatingInputGrid'],' Data inicio') ])
+            ]),
             %%% Data RETORNO
-            div([class='form-floating col-md-2'],
+            br([],[]),
+            div([class='row justify-content-center mx-3'],
+            [
+            div([class='form-floating col-4'],
                 [input([type=date, type=textarea, class='form-control'/*, value=DRetorno*/, style='max-width: 350px', id='floatingInputGrid', placeholder=' 00/00/0000',name=data_final]),
-                label([for='floatingInputGrid'],'Data final') ]),
+                label([for='floatingInputGrid'],' Data final') ])
+            ]),
             %%%% Label VIAJANTES %%%%
-            div([class='form-floating col-md-2'], [
+            br([],[]),
+            div([class='row justify-content-center mx-3'],
+            [
+            div([class='form-floating col-4'], [
                 select([class='form-select',name='viajante', value='Maria', id='floatingSelectGrid'],
                 \viajantes_html),
-                label([class='mx-2',for="floatingSelectGrid"],'Viajante')]),
+                label([class='mx-2',for="floatingSelectGrid"],' Viajante')])
+            ]),
             %%%% ADD VIAJANTE %%%%
-            a([ class(['nav-link']),
+            br([],[]),
+            a([ class(['flex-sm-fill text-sm-center nav-link']),
             href('/form1')],
             'Adicionar viajante'),
             %%% Qt. Diarias
-            div([class='form-floating col-md-2'], [
+            br([],[]),
+            div([class='row justify-content-center mx-3'],
+            [
+            div([class='form-floating col-4'], [
                 select([class='form-select',name='qtDia', value='1', id='floatingSelectGrid'],
                 [option([value='1'], '1'),
                 option([value='2'], '2'),
                 option([value='3'], '3'),
                 option([value='4'], '4'),
                 option([value='5'], '5') ]),
-                label([class='mx-2',for="floatingSelectGrid"],'Qt. Diárias')]),
+                label([class='mx-2',for="floatingSelectGrid"],' Qt. Diarias')])
+            ]),
             %%% Função
-            div([class='form-floating col-md-2'], [
+            br([],[]),
+            div([class='row justify-content-center mx-3'],
+            [
+            div([class='form-floating col-4'], [
                 select([class='form-select',name='funcao', value='Motorista', id='floatingSelectGrid'],
                 [option([id='floatingSelectGrid', value='Passageiro'], 'Passageiro'),
                 option([id='floatingSelectGrid', value='Motorista'], 'Motorista') ]),
-                label([class='mx-2',for="floatingSelectGrid"],'Função')]),
+                label([class='mx-2',for="floatingSelectGrid"],'Funcao')])
+            ]),
             %%% NMR SIGA
-            div([class='form-floating col-md-2'],
+            br([],[]),
+            div([class='row justify-content-center mx-3'],
+            [
+            div([class='form-floating col-4'],
                 [input([type=textarea, class='form-control', style='max-width:300px', value=Siga, id='floatingInputGrid',placeholder='1234',name=siga]),
-                label([for='floatingInputGrid'],'Nmr SIGA') ]),
+                label([for='floatingInputGrid'],' Nmr SIGA') ])
+            ]),
             %%% NMR SCPD
-            div([class='form-floating col-md-2'],
+            br([],[]),
+            div([class='row justify-content-center mx-3'],
+            [
+            div([class='form-floating col-4'],
                 [input([type=textarea, class='form-control', style='max-width:300px', value=Scpd, id='floatingInputGrid',placeholder='1234',name=scpd]),
-                label([for='floatingInputGrid'],'Nmr SCDP') ]),
+                label([for='floatingInputGrid'],' Nmr SCDP') ])
+            ]),
             %%% Km Inicial
-            div([class='form-floating col-md-2'],
+            br([],[]),
+            div([class='row justify-content-center mx-3'],
+            [
+            div([class='form-floating col-4'],
                 [input([type=textarea, class='form-control', style='max-width:300px', value=KmInicio, id='floatingInputGrid',placeholder='1234',name=kmi]),
-                label([for='floatingInputGrid'],'Km Inicial') ]),
+                label([for='floatingInputGrid'],' Km Inicial') ])
+            ]),
             %%% Km Final
-            div([class='form-floating col-md-2'],
+            br([],[]),
+            div([class='row justify-content-center mx-3'],
+            [
+            div([class='form-floating col-4'],
                 [input([type=textarea, class='form-control', style='max-width:300px', value=KmFinal, id='floatingInputGrid',placeholder='1234',name=kmf]),
-                label([for='floatingInputGrid'],'Km Final') ]),
+                label([for='floatingInputGrid'],' Km Final') ])
+            ]),
             %%% Horario SAIDA
-            div([class='form-floating col-md-2'],
+            br([],[]),
+            div([class='row justify-content-center mx-3'],
+            [
+            div([class='form-floating col-4'],
                 [input([type=textarea, class='form-control', style='max-width:300px', value=HSaida, id='floatingInputGrid',placeholder='--:--',name=hSaida]),
-                label([for='floatingInputGrid'],'Horario de Saida') ]),
+                label([for='floatingInputGrid'],' Horario de Saida') ])
+            ]),
             %%% Horario Chegada
-            div([class='form-floating col-md-2'],
+            br([],[]),
+            div([class='row justify-content-center mx-3'],
+            [
+            div([class='form-floating col-4'],
                 [input([type=textarea, class='form-control', style='max-width:300px', value=HChegada, id='floatingInputGrid',placeholder='--:--',name=hChegada]),
-                label([for='floatingInputGrid'],'Horario de Chegada') ]),
+                label([for='floatingInputGrid'],' Horario de Chegada') ])
+            ]),
             %%%% Label MOTORISTAS %%%%
-            div([class='form-floating col-md-2'], [
+            br([],[]),
+            div([class='row justify-content-center mx-3'],
+            [
+            div([class='form-floating col-4'], [
                 select([class='form-select',name='motorista', value='Maria', id='floatingSelectGrid'],
                 \motoristas_html),
-                label([class='mx-2',for="floatingSelectGrid"],'Motorista')]),
+                label([class='mx-2',for="floatingSelectGrid"],' Motorista')])
+            ]),
             %%%% Label Veiculos %%%%
-            div([class='form-floating col-md-2'], [
+            br([],[]),
+            div([class='row justify-content-center mx-3'],
+            [
+            div([class='form-floating col-4'], [
                 select([class='form-select',name='veiculo', value='Ford HFV-1234', id='floatingSelectGrid'],
                 \veiculos_html),
-                label([class='mx-2',for="floatingSelectGrid"],'Veiculo')]),
+                label([class='mx-2',for="floatingSelectGrid"],' Veiculo')])
+            ]),
             %%% Diarias Emp
-            div([class='form-floating col-md-2'], [
+            br([],[]),
+            div([class='row justify-content-center mx-3'],
+            [
+            div([class='form-floating col-4'], [
                 select([class='form-select',name='qtDiarias', value='1', id='floatingSelectGrid'],
                 [option([id='floatingSelectGrid', value='1'], '1'),
                 option([id='floatingSelectGrid', value='2'], '2'),
                 option([id='floatingSelectGrid', value='3'], '3'),
                 option([id='floatingSelectGrid', value='4'], '4'),
                 option([id='floatingSelectGrid', value='5'], '5') ]),
-                label([class='mx-2',for="floatingSelectGrid"],'Diarias Emp')]),
+                label([class='mx-2',for="floatingSelectGrid"],' Diarias Emp')])
+            ]),
             %%% Km Uti
-            div([class='form-floating col-md-2'],
+            br([],[]),
+            div([class='row justify-content-center mx-3'],
+            [
+            div([class='form-floating col-4'],
                 [input([type=textarea, class='form-control', style='max-width:300px', value=KmUtilizado, id='floatingInputGrid',placeholder='--:--',name=kmUl]),
-                label([for='floatingInputGrid'],'Km Utilizado') ]),
+                label([for='floatingInputGrid'],' Km Utilizado') ])
+            ]),
             %%% OBSERVAÇÕES
-            div([class='form-floating mb-3'],
-                [input([type=textarea, class='form-control', style='height: 200px; width: 400px', value=Obs, id='floatingInputGrid', placeholder='Exemplo',name=obs]),
-                label([for='floatingInputGrid'],'Observacoes') ]),
+            br([],[]),
+            div([class='row justify-content-center mx-3'],
+            [
+                div([class='form-floating col-4'],
+                    [input([type=textarea, class='form-control', style='height: 200px; width: 400px', value=Obs, id='floatingInputGrid', placeholder=' Exemplo',name=obs]),
+                    label([for='floatingInputGrid'],' Observacoes') 
+                ])
+            ]),
             %%%%%% BOTOES
-            div([class='row justify-content-start mx-3'],
+            br([],[]),
+            div([class='row justify-content-center mx-3'],
                 [
                 div([class='col-md-2'],
                    input([class='btn btn-success', style='width: 150px',name=submit, type=submit, value='Enviar'], [])),
                 div([class='col-md-2'], 
                     [a([class='btn btn-primary', href='/', style='width: 150px'], 'Voltar ao inicio')])
-                ])
+                ]),
+                br([],[])
             ])
         ).
 

@@ -13,11 +13,16 @@ tbl_locais(_Pedido) :-
                             th([scope="col"], "#Id"),
                             th([scope="col"], "Cidade"),
                             th([scope="col"], "Cep"),
-                            th([scope="col"], "Endere�o")
+                            th([scope="col"], "Endereco")
                         ]) ]),
                     tbody([], \corpo_tabela_lcl)
                 ]),
-            div([], [a([class='btn btn-primary', href='/', style='width: 150px'], 'Voltar ao início')])
+            div([class='row justify-content-center mx-3'],
+            [
+                div([class='col-md-2'],
+                [
+                    a([class='btn btn-primary', href='/', style='width: 150px'], 'Voltar ao inicio')])
+            ])
         ]).
 
 corpo_tabela_lcl -->

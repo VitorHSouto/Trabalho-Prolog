@@ -31,7 +31,12 @@ tbl_viagens(_Pedido) :-
                         ]) ]),
                     tbody([], \corpo_tabela_viag)
                 ]),
-            div([], [a([class='btn btn-primary', href='/', style='width: 150px'], 'Voltar ao início')])
+            div([class='row justify-content-center mx-3'],
+            [
+                div([class='col-md-2'],
+                [
+                    a([class='btn btn-primary', href='/', style='width: 150px'], 'Voltar ao inicio')])
+            ])
         ]).
 
 corpo_tabela_viag -->

@@ -13,11 +13,16 @@ tbl_viajantes(_Pedido) :-
                             th([scope="col"], "Funcao"),
                             th([scope="col"], "Email"),
                             th([scope="col"], "Senha"),
-                            th([scope="col"], "N�vel de acesso")
+                            th([scope="col"], "Nivel de acesso")
                         ]) ]),
                     tbody([], \corpo_tabela_via)
                 ]),
-            div([], [a([class='btn btn-primary', href='/', style='width: 150px'], 'Voltar ao in�cio')])
+            div([class='row justify-content-center mx-3'],
+            [
+                div([class='col-md-2'],
+                [
+                    a([class='btn btn-primary', href='/', style='width: 150px'], 'Voltar ao inicio')])
+            ])
         ]).
 
 

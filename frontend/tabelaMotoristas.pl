@@ -15,7 +15,12 @@ tbl_motoristas(_Pedido) :-
                         ]) ]),
                     tbody([], \corpo_tabela_moto)
                 ]),
-            div([], [a([class='btn btn-primary', href='/', style='width: 150px'], 'Voltar ao inicio')])
+            div([class='row justify-content-center mx-3'],
+            [
+                div([class='col-md-2'],
+                [
+                    a([class='btn btn-primary', href='/', style='width: 150px'], 'Voltar ao inicio')])
+            ])
         ]).
 
 corpo_tabela_moto -->
