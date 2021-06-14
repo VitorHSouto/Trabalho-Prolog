@@ -1,14 +1,10 @@
-cadastro(_Pedido) :-
+login(Mensage,_Pedido) :-
     reply_html_page(
         bootstrap,
-        [title('Cadatrar Usuario')],
-        [h1([class='row mx-3 p'],'Cadatrar Usuario'), p([],[]),
-            form([action='/recebeCadastro', method='POST'],[
-                %%% Nome
-                div([class='form-floating mb-3'], [
-                    input([ type=textarea, class='form-control', style='max-width:350px', id='floatingInputGrid',placeholder='name@example.com',name=nome]),
-                            label([for='floatingInputGrid'],'Nome') 
-                ]),
+        [title('Login')],
+        [h1([class='row mx-3 p'],'Login'), p([],[]),
+            p([class="text-danger"],Mensage),
+            form([action='/recebeLogin', method='POST'],[
                 %%% Email
                 div([class='form-floating mb-3'], [
                     input([ type=email, class='form-control', style='max-width:350px', id='floatingInputGrid',placeholder='name@example.com',name=email]),
@@ -32,13 +28,14 @@ cadastro(_Pedido) :-
             ])
         ]).
 
-recebe_cadastro(post, Pedido) :-
+recebe_login(post, Pedido) :-
     http_read_data(Pedido,
-                    [nome=AtomNome, email=AtomEmail, senha=Senha, funcao=Funcao, submit='Enviar']
+                    [email=AtomEmail, senha=Senha, funcao=Funcao, submit='Enviar']
                     , []),
-    atom_string(AtomNome, Nome),
     atom_string(AtomEmail, Email),    
-    usuario:insere(IdUser,Nome,Email,Senha),
-    funcao:insere(IdFunc,Funcao),
-    usuario_funcao:insere(_,IdUser,IdFunc),
-    login('',_).
+    (usuario:senha_valida(Email,Senha,Id_User), %%% Login CORRETO!
+    funcao(Id_User,Funcao,_,_),!,
+    ((Funcao=admin,form1(_));   % REDIRECIONA ADM
+    (Funcao=user,home(_)))      % REDIRECIONA USER
+    );
+    login('Login Falhou',_).                    %%% Login INCORRETO!

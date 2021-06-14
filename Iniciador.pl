@@ -13,6 +13,7 @@
                 frontend(alocacao),
                 frontend(viagens),
                 frontend(veiculo),
+                frontend(login),
                 frontend(cadastro)
               ],                           /**/
               [ silent(true),              /**/

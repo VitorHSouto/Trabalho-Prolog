@@ -32,6 +32,7 @@ http:location(webfonts, root(webfonts), []).
 
 % Frontend
 :- http_handler(root(.), home , []).
+:- http_handler(root(login), login('') , []).
 :- http_handler(root(cadastro), cadastro , []).
 :- http_handler(root(form1), form1 , []).
 :- http_handler(root(form2), form2 , []).
@@ -43,6 +44,10 @@ http:location(webfonts, root(webfonts), []).
 :- http_handler(root(tbl_viagens), tbl_viagens , []).
 
 :- http_handler('/recebeCadastro', recebe_cadastro(Method),
+                [ method(Method),
+                  methods([post]) ]).
+
+:- http_handler('/recebeLogin', recebe_login(Method),
                 [ method(Method),
                   methods([post]) ]).
 

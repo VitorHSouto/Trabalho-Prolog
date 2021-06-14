@@ -89,8 +89,8 @@ atualiza_senha(Id, Senha):-
 % estar ligados a valores e o hash da Senha deve ser comparavel
 % ao armazenado anteriormente.
 
-senha_valida(Email, Senha, Id, Nome):-
-    usuario(Id, Nome, Email, Hash, _Data_Cad, _Data_Mod),
+senha_valida(Email, Senha, Id):-
+    usuario(Id, _Nome, Email, Hash, _Data_Cad, _Data_Mod),
     !,
     crypto_password_hash(Senha,Hash).
 
