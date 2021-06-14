@@ -33,6 +33,7 @@ http:location(webfonts, root(webfonts), []).
 % Frontend
 :- http_handler(root(.), login('') , []).
 :- http_handler(root(administrador), tabelas_adm , []).
+:- http_handler(root(equipe), equipe , []).
 :- http_handler(root(cadastro), cadastro , []).
 :- http_handler(root(home), home, []).
 :- http_handler(root(form1), form1 , []).
