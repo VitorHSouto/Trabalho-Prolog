@@ -14,7 +14,8 @@
                 frontend(viagens),
                 frontend(veiculo),
                 frontend(login),
-                frontend(cadastro)
+                frontend(cadastro),
+                frontend(tabelasAdm)
               ],                           /**/
               [ silent(true),              /**/
                 if(not_loaded) ]).         /**/

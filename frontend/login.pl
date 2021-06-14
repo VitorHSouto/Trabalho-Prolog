@@ -35,7 +35,7 @@ recebe_login(post, Pedido) :-
     atom_string(AtomEmail, Email),    
     (usuario:senha_valida(Email,Senha,Id_User), %%% Login CORRETO!
     funcao(Id_User,Funcao,_,_),!,
-    ((Funcao=admin,form1(_));   % REDIRECIONA ADM
+    ((Funcao=admin,tabelas_adm(_));   % REDIRECIONA ADM
     (Funcao=user,home(_)))      % REDIRECIONA USER
     );
     login('Login Falhou',_).                    %%% Login INCORRETO!
