@@ -1,3 +1,5 @@
+:- consult(tabelaCadastros).
+
 cadastro(_Pedido) :-
     reply_html_page(
         bootstrap,

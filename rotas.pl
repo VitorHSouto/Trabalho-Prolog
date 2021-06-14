@@ -42,6 +42,7 @@ http:location(webfonts, root(webfonts), []).
 :- http_handler(root(tbl_locais), tbl_locais , []).
 :- http_handler(root(tbl_alocacao), tbl_alocacao , []).
 :- http_handler(root(tbl_viagens), tbl_viagens , []).
+:- http_handler(root(tbl_cadastros), tbl_cadastros , []).
 
 :- http_handler('/recebeCadastro', recebe_cadastro(Method),
                 [ method(Method),
