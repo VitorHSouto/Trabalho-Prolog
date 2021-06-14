@@ -3,6 +3,18 @@ tbl_veiculo(_Pedido) :-
         bootstrap,
         [title('Tabela')], 
         [
+            \tabela_veiculos,
+            div([class='row justify-content-center mx-3'],
+            [
+                div([class='col-md-2'],
+                [
+                    a([class='btn btn-primary', href='/', style='width: 150px'], 'Voltar ao inicio')])
+            ])
+        ]).
+
+tabela_veiculos --> 
+    html(
+            div([class='row justify-content-center mx-3'],[
             table([class='table table-striped table-bordered table-condensed table-hover'],
                 [
                     thead([], [
@@ -14,14 +26,8 @@ tbl_veiculo(_Pedido) :-
                             th([scope="col"], "Placa")
                         ]) ]),
                     tbody([], \corpo_tabela_vei)
-                ]),
-            div([class='row justify-content-center mx-3'],
-            [
-                div([class='col-md-2'],
-                [
-                    a([class='btn btn-primary', href='/', style='width: 150px'], 'Voltar ao inicio')])
-            ])
-        ]).
+                ]) ])
+        ).
 
 corpo_tabela_vei -->
     {

@@ -3,18 +3,7 @@ tbl_motoristas(_Pedido) :-
         bootstrap,
         [title('Tabela')], 
         [
-            table([class='table table-striped table-bordered table-condensed table-hover'],
-                [
-                    thead([], [
-                        tr([],[
-                            th([scope="col"], "#Id"),
-                            th([scope="col"], "Nome"),
-                            th([scope="col"], "CPF"),
-                            th([scope="col"], "Num de CNH"),
-							th([scope="col"], "Data da primeira Habilitacao")
-                        ]) ]),
-                    tbody([], \corpo_tabela_moto)
-                ]),
+            \tabela_motoristas,
             div([class='row justify-content-center mx-3'],
             [
                 div([class='col-md-2'],
@@ -22,6 +11,24 @@ tbl_motoristas(_Pedido) :-
                     a([class='btn btn-primary', href='/', style='width: 150px'], 'Voltar ao inicio')])
             ])
         ]).
+
+tabela_motoristas --> 
+    html(
+            div([class='row justify-content-center mx-3'],[
+                table([class='table table-striped table-bordered table-condensed table-hover'],
+                    [
+                        thead([], [
+                            tr([],[
+                                th([scope="col"], "#Id"),
+                                th([scope="col"], "Nome"),
+                                th([scope="col"], "CPF"),
+                                th([scope="col"], "Num de CNH"),
+                                th([scope="col"], "Data da primeira Habilitacao")
+                            ]) ]),
+                        tbody([], \corpo_tabela_moto)
+                    ])
+                 ])
+        ).
 
 corpo_tabela_moto -->
     {

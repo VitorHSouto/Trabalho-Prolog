@@ -6,17 +6,7 @@ tbl_locais(_Pedido) :-
         bootstrap,
         [title('Tabela')],
         [
-            table([class='table table-striped table-bordered table-condensed table-hover'],
-                [
-                    thead([], [
-                        tr([],[
-                            th([scope="col"], "#Id"),
-                            th([scope="col"], "Cidade"),
-                            th([scope="col"], "Cep"),
-                            th([scope="col"], "Endereco")
-                        ]) ]),
-                    tbody([], \corpo_tabela_lcl)
-                ]),
+            \tabela_locais,
             div([class='row justify-content-center mx-3'],
             [
                 div([class='col-md-2'],
@@ -24,6 +14,23 @@ tbl_locais(_Pedido) :-
                     a([class='btn btn-primary', href='/', style='width: 150px'], 'Voltar ao inicio')])
             ])
         ]).
+
+tabela_locais -->
+    html(
+            div([class='row justify-content-center mx-3'],[
+                table([class='table table-striped table-bordered table-condensed table-hover'],
+                    [
+                        thead([], [
+                            tr([],[
+                                th([scope="col"], "#Id"),
+                                th([scope="col"], "Cidade"),
+                                th([scope="col"], "Cep"),
+                                th([scope="col"], "Endereco")
+                            ]) ]),
+                        tbody([], \corpo_tabela_lcl)
+                    ])
+            ])
+        ).
 
 corpo_tabela_lcl -->
     {

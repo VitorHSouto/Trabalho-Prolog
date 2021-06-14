@@ -3,6 +3,18 @@ tbl_viajantes(_Pedido) :-
         bootstrap,
         [title('Tabela')],
         [
+            \tabela_viajantes,
+            div([class='row justify-content-center mx-3'],
+            [
+                div([class='col-md-2'],
+                [
+                    a([class='btn btn-primary', href='/', style='width: 150px'], 'Voltar ao inicio')])
+            ])
+        ]).
+
+tabela_viajantes --> 
+    html(
+            div([class='row justify-content-center mx-3'],[
             table([class='table table-striped table-bordered table-condensed table-hover'],
                 [
                     thead([], [
@@ -16,15 +28,9 @@ tbl_viajantes(_Pedido) :-
                             th([scope="col"], "Nivel de acesso")
                         ]) ]),
                     tbody([], \corpo_tabela_via)
-                ]),
-            div([class='row justify-content-center mx-3'],
-            [
-                div([class='col-md-2'],
-                [
-                    a([class='btn btn-primary', href='/', style='width: 150px'], 'Voltar ao inicio')])
+                ]) 
             ])
-        ]).
-
+        ).
 
 corpo_tabela_via -->
     {
