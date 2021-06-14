@@ -30,22 +30,47 @@ http:location(webfonts, root(webfonts), []).
 :- http_handler(js(.),
                 serve_files_in_directory(dir_js), [prefix]).
 
-% Frontend
+/********************************
+*   ROTAS PRIMÁRIAS
+*********************************/
 :- http_handler(root(.), login('') , []).
 :- http_handler(root(administrador), tabelas_adm , []).
 :- http_handler(root(equipe), equipe , []).
 :- http_handler(root(cadastro), cadastro , []).
 :- http_handler(root(home), home, []).
+
+
 :- http_handler(root(form1), form1 , []).
 :- http_handler(root(form2), form2 , []).
+:- http_handler(root(form3), form3 , []).
+:- http_handler(root(form4), form4 , []).
 :- http_handler(root(form5), form5 , []).
 :- http_handler(root(form6), form6 , []).
+
+/********************************
+*   ROTAS FORMULÁRIOS
+*********************************/
+:- http_handler(root(viajantes), form1, []).
+:- http_handler(root(locais), form2, []).
+:- http_handler(root(veiculo), form3, []).
+:- http_handler(root(motoristas), form4, []).
+:- http_handler(root(viagens), form5, []).
+:- http_handler(root(alocacao), form6, []).
+
+/********************************
+*   ROTAS TABELAS
+*********************************/
 :- http_handler(root(tbl_viajantes), tbl_viajantes , []).
 :- http_handler(root(tbl_locais), tbl_locais , []).
 :- http_handler(root(tbl_alocacao), tbl_alocacao , []).
 :- http_handler(root(tbl_viagens), tbl_viagens , []).
 :- http_handler(root(tbl_cadastros), tbl_cadastros , []).
+:- http_handler(root(tbl_veiculo), tbl_veiculo , []).
+:- http_handler(root(tbl_motoristas), tbl_motoristas , []).
 
+/********************************
+*   ROTAS RECEBEM CADASTRO
+*********************************/
 :- http_handler('/recebeCadastro', recebe_cadastro(Method),
                 [ method(Method),
                   methods([post]) ]).
@@ -54,8 +79,6 @@ http:location(webfonts, root(webfonts), []).
                 [ method(Method),
                   methods([post]) ]).
 
-%%%%%%%%%% FORM 1 E 2 %%%%%%%%%%%%%%
-% Backend
 :- http_handler('/receptorF1', recebe_form1(Method),
                 [ method(Method),
                   methods([post]) ]).
@@ -64,46 +87,9 @@ http:location(webfonts, root(webfonts), []).
                 [ method(Method),
                   methods([post]) ]).
 
-:- http_handler('/editarF1', editar_form1(Method),
-                [ method(Method),
-                  methods([post]) ]).
-
-:- http_handler('/editarF2', editar_form2(Method),
-                [ method(Method),
-                  methods([post]) ]).
-
-% A página de cadastro de novos bookmarks
-:- http_handler( root(locais), form1, []).
-
-% A página para edição de um bookmark existente
-:- http_handler( root(locs/editar/Id), editarLocs(Id), []).
-:- http_handler( root(locs/apagar/Id), apagarLocs(Id), []).
-
-:- http_handler( root(viajantes/editar/Id), editarViajantes(Id), []).
-:- http_handler( root(viajantes/apagar/Id), apagarViajantes(Id), []).
-
-
-% Rotas da API
-:- http_handler( api1(locs/Id), locs(Metodo, Id),
-                 [ method(Metodo),
-                   methods([ get, post, put, delete ]) ]).
-
-:- http_handler( api1(viajante/Id), viajante(Metodo, Id),
-                [ method(Metodo),
-                methods([ get, post, put, delete ]) ]).
-
-
-%%%%%%%%%% FORM 3 E 4 %%%%%%%%%%%%%%
-:- http_handler(root(form3), form3 , []).
-:- http_handler(root(form4), form4 , []).
-:- http_handler(root(tbl_veiculo), tbl_veiculo , []).
-:- http_handler(root(tbl_motoristas), tbl_motoristas , []).
-
-
 :- http_handler('/receptorF3', recebe_form3(Method),
                 [ method(Method),
                   methods([post]) ]).
-
 
 :- http_handler('/receptorF4', recebe_form4(Method),
                 [ method(Method),
@@ -114,6 +100,17 @@ http:location(webfonts, root(webfonts), []).
                   methods([post]) ]).
 
 :- http_handler('/receptorF6', recebe_form6(Method),
+                [ method(Method),
+                  methods([post]) ]).
+
+/*************************************
+*   ROTAS RECEBEM CADASTRO "EDIÇÃO"
+**************************************/
+:- http_handler('/editarF1', editar_form1(Method),
+                [ method(Method),
+                  methods([post]) ]).
+
+:- http_handler('/editarF2', editar_form2(Method),
                 [ method(Method),
                   methods([post]) ]).
 
@@ -133,10 +130,14 @@ http:location(webfonts, root(webfonts), []).
                 [ method(Method),
                   methods([post]) ]).
 
-:- http_handler( root(veiculo), form3, []).
-:- http_handler( root(motoristas), form4, []).
-:- http_handler( root(viagens), form5, []).
-:- http_handler( root(alocacao), form6, []).
+/*************************************
+*   ROTAS RECEBEM ID PARA "EDIÇÃO"
+**************************************/
+:- http_handler( root(locs/editar/Id), editarLocs(Id), []).
+:- http_handler( root(locs/apagar/Id), apagarLocs(Id), []).
+
+:- http_handler( root(viajantes/editar/Id), editarViajantes(Id), []).
+:- http_handler( root(viajantes/apagar/Id), apagarViajantes(Id), []).
 
 :- http_handler( root(veiculo/editar/Id), editarVeiculo(Id), []).
 :- http_handler( root(veiculo/apagar/Id), apagarVeiculo(Id), []).
@@ -150,6 +151,14 @@ http:location(webfonts, root(webfonts), []).
 :- http_handler( root(viagens/editar/Id), editarViagem(Id), []).
 :- http_handler( root(viagens/apagar/Id), apagarViagem(Id), []).
 
+% Rotas da API
+:- http_handler( api1(locs/Id), locs(Metodo, Id),
+                 [ method(Metodo),
+                   methods([ get, post, put, delete ]) ]).
+
+:- http_handler( api1(viajante/Id), viajante(Metodo, Id),
+                [ method(Metodo),
+                methods([ get, post, put, delete ]) ]).
 
 :- http_handler( api1(veiculo/Id), veiculo(Metodo, Id),
                  [ method(Metodo),
