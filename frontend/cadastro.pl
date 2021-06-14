@@ -30,7 +30,10 @@ cadastro(_Pedido) :-
                 ]),
                 div([class='form-floating mb-3'],
                     input([class='btn btn-success', style='width: 150px',name=submit, type=submit, value='Enviar'],
-                            []))
+                            [])),
+                p(['Ja possui uma conta? ',
+                    a([ href('/'),
+                        class(['primary-link','text-decoration-none'])],'Fazer Login')])
             ])
         ]).
 

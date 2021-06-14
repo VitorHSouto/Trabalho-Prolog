@@ -24,7 +24,10 @@ login(Mensage,_Pedido) :-
                 ]),
                 div([class='form-floating mb-3'],
                     input([class='btn btn-success', style='width: 150px',name=submit, type=submit, value='Enviar'],
-                            []))
+                            [])),
+                p(['Ainda nao possui uma conta? ',
+                    a([ href('/cadastro'),
+                        class([ 'primary-link','text-decoration-none'])],'Cadastre-se')])
             ])
         ]).
 
