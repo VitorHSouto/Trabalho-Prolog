@@ -12,7 +12,8 @@
                 frontend(motoristas),
                 frontend(alocacao),
                 frontend(viagens),
-                frontend(veiculo)
+                frontend(veiculo),
+                frontend(cadastro)
               ],                           /**/
               [ silent(true),              /**/
                 if(not_loaded) ]).         /**/
@@ -31,6 +32,9 @@
 :- use_module(bd(pessoa_por_viagem)).
 :- use_module(bd(viagens)).
 :- use_module(bd(alocacao)).
+:- use_module(bd(usuario)).
+:- use_module(bd(funcao)).
+:- use_module(bd(usuario_funcao)).
 
 :- use_module(library(http/thread_httpd)).
 :- use_module(library(http/http_dispatch)).

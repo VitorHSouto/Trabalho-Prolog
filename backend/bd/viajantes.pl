@@ -1,4 +1,4 @@
-:- module(viajantes, [viajantes/7, insere/7, remove/1, atualiza/7, remove_todos/0]).
+:- module(viajantes, [viajantes/7]).
 
 :- use_module(library(persistency)).
 :- use_module(bd(chave)).
