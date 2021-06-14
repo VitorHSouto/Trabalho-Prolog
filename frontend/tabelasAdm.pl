@@ -4,12 +4,12 @@ tabelas_adm(_Pedido) :-
         [title('Tabela')],
         [
             \tabela_usuarios,
-            \tabela_alocacao,
-            \tabela_locais,
-            \tabela_motoristas,
-            \tabela_veiculos,
-            \tabela_viagens,
             \tabela_viajantes,
+            \tabela_locais,
+            \tabela_veiculos,
+            \tabela_motoristas,
+            \tabela_viagens,
+            \tabela_alocacao,
             div([class='row justify-content-center mx-3'],
             [
                 div([class='col-md-2'],

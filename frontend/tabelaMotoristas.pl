@@ -15,6 +15,8 @@ tbl_motoristas(_Pedido) :-
 tabela_motoristas --> 
     html(
             div([class='row justify-content-center mx-3'],[
+                div([class='d-flex justify-content-end mb-1'], 
+                    [a([class='btn btn-primary', href='/form4', style='width: 80px'], 'Novo')]),
                 table([class='table table-striped table-bordered table-condensed table-hover'],
                     [
                         thead([], [

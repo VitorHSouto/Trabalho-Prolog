@@ -15,6 +15,8 @@ tbl_viajantes(_Pedido) :-
 tabela_viajantes --> 
     html(
             div([class='row justify-content-center mx-3'],[
+            div([class='d-flex justify-content-end mb-1'], 
+                [a([class='btn btn-primary', href='/form1', style='width: 80px'], 'Novo')]),
             table([class='table table-striped table-bordered table-condensed table-hover'],
                 [
                     thead([], [

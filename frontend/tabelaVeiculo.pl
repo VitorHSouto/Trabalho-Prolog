@@ -15,18 +15,21 @@ tbl_veiculo(_Pedido) :-
 tabela_veiculos --> 
     html(
             div([class='row justify-content-center mx-3'],[
-            table([class='table table-striped table-bordered table-condensed table-hover'],
-                [
-                    thead([], [
-                        tr([],[
-                            th([scope="col"], "#Id"),
-                            th([scope="col"], "Ano"),
-                            th([scope="col"], "Marca"),
-                            th([scope="col"], "Modelo"),
-                            th([scope="col"], "Placa")
-                        ]) ]),
-                    tbody([], \corpo_tabela_vei)
-                ]) ])
+                div([class='d-flex justify-content-end mb-1'], 
+                    [a([class='btn btn-primary', href='/form3', style='width: 80px'], 'Novo')]),
+                table([class='table table-striped table-bordered table-condensed table-hover'],
+                    [
+                        thead([], [
+                            tr([],[
+                                th([scope="col"], "#Id"),
+                                th([scope="col"], "Ano"),
+                                th([scope="col"], "Marca"),
+                                th([scope="col"], "Modelo"),
+                                th([scope="col"], "Placa")
+                            ]) ]),
+                        tbody([], \corpo_tabela_vei)
+                ]) 
+            ])
         ).
 
 corpo_tabela_vei -->
