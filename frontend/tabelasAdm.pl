@@ -2,7 +2,8 @@ tabelas_adm(_Pedido) :-
     reply_html_page(
         bootstrap,
         [title('Tabela')],
-        [
+        [   
+            br([],[]),
             \tabela_usuarios,
             \tabela_viajantes,
             \tabela_locais,
