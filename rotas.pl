@@ -31,9 +31,9 @@ http:location(webfonts, root(webfonts), []).
                 serve_files_in_directory(dir_js), [prefix]).
 
 % Frontend
-:- http_handler(root(.), home , []).
-:- http_handler(root(login), login('') , []).
+:- http_handler(root(.), login('') , []).
 :- http_handler(root(cadastro), cadastro , []).
+:- http_handler(root(home), home, []).
 :- http_handler(root(form1), form1 , []).
 :- http_handler(root(form2), form2 , []).
 :- http_handler(root(form5), form5 , []).

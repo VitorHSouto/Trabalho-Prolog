@@ -3,6 +3,18 @@ tbl_cadastros(_Pedido) :-
         bootstrap,
         [title('Tabela')],
         [
+            \tabela_usuarios,
+            div([class='row justify-content-center mx-3'],
+            [
+                div([class='col-md-2'],
+                [
+                    a([class='btn btn-primary', href='/', style='width: 150px'], 'Voltar ao inicio')])
+            ])
+        ]).
+
+tabela_usuarios --> 
+    html(
+            div([class='row justify-content-center mx-3'],[
             table([class='table table-striped table-bordered table-condensed table-hover'],
                 [
                     thead([], [
@@ -13,15 +25,8 @@ tbl_cadastros(_Pedido) :-
                             th([scope="col"], "Funcao")
                         ]) ]),
                     tbody([], \corpo_tabela_user)
-                ]),
-            div([class='row justify-content-center mx-3'],
-            [
-                div([class='col-md-2'],
-                [
-                    a([class='btn btn-primary', href='/', style='width: 150px'], 'Voltar ao inicio')])
-            ])
-        ]).
-
+                ]) ])
+        ).
 
 corpo_tabela_user -->
     {
