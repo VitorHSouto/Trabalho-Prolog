@@ -3,6 +3,7 @@ tbl_veiculo(_Pedido) :-
         bootstrap,
         [title('Tabela')], 
         [
+            \titulo_da_tabela('Veiculos Cadastrados'),
             \tabela_veiculos,
             div([class='row justify-content-center mx-3'],
             [

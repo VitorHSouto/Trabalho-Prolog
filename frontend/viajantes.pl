@@ -45,7 +45,7 @@ form1(_Pedido) :-
                   
                  p([class='col-md-2'], 
                  [
-                    a([class='btn btn-primary', href='/', style='width: 200px'], 'Voltar ao inicio')])
+                    a([class='btn btn-primary', href='/administrador', style='width: 150px'], 'Voltar as Tabelas')])
                   ]),
                   br([],[])
                   ])

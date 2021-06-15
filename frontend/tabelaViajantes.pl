@@ -3,6 +3,7 @@ tbl_viajantes(_Pedido) :-
         bootstrap,
         [title('Tabela')],
         [
+            \titulo_da_tabela('Viajantes Cadastrados'),
             \tabela_viajantes,
             div([class='row justify-content-center mx-3'],
             [
