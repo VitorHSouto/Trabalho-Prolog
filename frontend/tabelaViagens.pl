@@ -6,6 +6,7 @@ tbl_viagens(_Pedido) :-
         bootstrap,
         [title('Tabela')],
         [
+            \titulo_da_tabela('Viagens Cadastradas'),
             \tabela_viagens,
             div([class='row justify-content-center mx-3'],
             [

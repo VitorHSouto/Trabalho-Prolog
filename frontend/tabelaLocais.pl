@@ -6,6 +6,7 @@ tbl_locais(_Pedido) :-
         bootstrap,
         [title('Tabela')],
         [
+            \titulo_da_tabela('Locais Cadastrados'),
             \tabela_locais,
             div([class='row justify-content-center mx-3'],
             [

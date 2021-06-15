@@ -6,6 +6,7 @@ tbl_alocacao(_Pedido) :-
         bootstrap,
         [title('Tabela')],
         [
+            \titulo_da_tabela('Alocacoes de Veiculos Cadastradas'),
             \tabela_alocacao,
             div([class='row justify-content-center mx-3'],
             [

@@ -4,9 +4,13 @@ form6(_Pedido) :-
     reply_html_page(
         bootstrap,
         [title('Formulario 6')],
-        [h1([class='row mx-3 p'],'Formulario 6'), p([],[]),
-         h2([class='row mx-5 px-5 w-50 text-primary'],'Requisicao de locacao de veiculos'), p([],[]),
-        form([action='/receptorF6', method='POST'], div([], [\form_alocacao('','','','')])
+        [
+          \html_requires(css('custom.css')),
+          \html_requires(css('entrada.css')),
+          \navbar_user('navbar'),
+            h1([class='row mx-3 p'],'Formulario 6'), p([],[]),
+            h2([class='row mx-5 px-5 w-50 text-primary'],'Requisicao de locacao de veiculos'), p([],[]),
+            form([action='/receptorF6', method='POST'], div([], [\form_alocacao('','','','')])
            )
          ]).
 

@@ -30,7 +30,7 @@ form4(_Pedido) :-
                     div([class='col-2'],
                        input([class='btn btn-success', style='width: 150px',name=submit, type=submit, value='Enviar'],
                              [])),
-                    div([class='col-2'], [a([class='btn btn-primary', href='/', style='width: 150px'], 'Voltar ao inicio')])
+                    div([class='col-2'], [a([class='btn btn-primary', href='/administrador', style='width: 150px'], 'Voltar as Tabelas')])
                     ]),
                  br([],[])
                ])

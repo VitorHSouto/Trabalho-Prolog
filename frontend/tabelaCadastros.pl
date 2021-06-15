@@ -3,6 +3,7 @@ tbl_cadastros(_Pedido) :-
         bootstrap,
         [title('Tabela')],
         [
+            \titulo_da_tabela('Cadastros'),
             \tabela_usuarios,
             div([class='row justify-content-center mx-3'],
             [

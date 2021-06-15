@@ -191,7 +191,7 @@ form_viagens(_, _, _, _, _DInicio, _MInicio, _AInicio, _DFinal, _MFinal, _AFinal
                 div([class='col-md-2'],
                    input([class='btn btn-success', style='width: 150px',name=submit, type=submit, value='Enviar'], [])),
                 div([class='col-md-2'], 
-                    [a([class='btn btn-primary', href='/', style='width: 150px'], 'Voltar ao inicio')])
+                    [a([class='btn btn-primary', href='/administrador', style='width: 150px'], 'Voltar as Tabelas')])
                 ]),
                 br([],[])
             ])

@@ -3,6 +3,7 @@ tbl_motoristas(_Pedido) :-
         bootstrap,
         [title('Tabela')], 
         [
+            \titulo_da_tabela('Motoristas Cadastrados'),
             \tabela_motoristas,
             div([class='row justify-content-center mx-3'],
             [
