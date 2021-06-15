@@ -12,8 +12,8 @@ login(Mensage,_Pedido) :-
             [
                 div([class='col-md-auto'],
                 [
-                h1([class='row mx-3 p'],'Login'), p([],[]),
-                p([class="text-danger"],Mensage),
+                h1([class='row mx-3 p row justify-content-md-center'],'Login'), p([],[]),
+                p([class="text-danger row justify-content-md-center"],strong([class="row justify-content-md-center"],Mensage)),
                 form([action='/recebeLogin', method='POST'],
                 [
                     %%% Email
@@ -56,4 +56,4 @@ recebe_login(post, Pedido) :-
     ((Funcao=admin,tabelas_adm(_));   % REDIRECIONA ADM
     (Funcao=user,home(_)))      % REDIRECIONA USER
     );
-    login('Login Falhou',_).                    %%% Login INCORRETO!
+    login('Email ou Senha invalido',_).                    %%% Login INCORRETO!

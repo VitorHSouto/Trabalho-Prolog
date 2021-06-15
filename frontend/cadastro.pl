@@ -4,7 +4,17 @@ cadastro(_Pedido) :-
     reply_html_page(
         bootstrap,
         [title('Cadatrar Usuario')],
-        [h1([class='row mx-3 p'],'Cadatrar Usuario'), p([],[]),
+        [
+            br([],[]),
+            br([],[]),
+            br([],[]),
+            br([],[]),
+            br([],[]),
+            div([class='row justify-content-md-center'],
+            [
+                div([class='col-md-auto'],
+                [
+            h1([class='row mx-3 p'],'Cadatrar Usuario'), p([],[]),
             form([action='/recebeCadastro', method='POST'],
             [
                 \cadastro_form('','')
@@ -12,6 +22,8 @@ cadastro(_Pedido) :-
             p(['Ja possui uma conta? ',
                     a([ href('/'),
                         class(['primary-link','text-decoration-none'])],'Fazer Login')])
+                ])
+            ])
         ]).
 
 cadastro_form(Nome,Email) -->
