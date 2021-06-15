@@ -22,7 +22,7 @@ navbar_user(_Pedido) -->
                               [ 
                                 \nav_item('/equipe', 'Equipe'),
                                 \nav_item('/alocacao', 'Requisicao de Veiculo'),
-                                \nav_item('/', 'Editar Pefil')
+                                \nav_item('/confirma_usuario', 'Editar Pefil')
                               ]) 
                          ])
                    ])
@@ -52,17 +52,17 @@ navbar_adm(_Pedido) -->
                                     'Cadastros'),
                                     ul([class='dropdown-menu dropdown-menu', aria-labelledby='navbarDropdownMenuLink'],
                                     [
+                                    li([a([class='dropdown-item', href='/viajantes'], 'Cadastrar Viajante')]),
+                                    li([a([class='dropdown-item', href='/locais'], 'Cadastrar Local')]),
                                     li([a([class='dropdown-item', href='/veiculo'], 'Cadastrar Veiculo')]),
                                     li([a([class='dropdown-item', href='/motoristas'], 'Cadastrar Motorista')]),
-                                    li([a([class='dropdown-item', href='/viagens'], 'Cadastrar Viagem')]),
-                                    li([a([class='dropdown-item', href='/locais'], 'Cadastrar Local')]),
-                                    li([a([class='dropdown-item', href='/viajantes'], 'Cadastrar Viajante')])
+                                    li([a([class='dropdown-item', href='/viagens'], 'Cadastrar Viagem')])
                                     ])
 
 
                                 ]),
                                 \nav_item('/equipe_adm', 'Equipe'),
-                                \nav_item('/', 'Editar Perfil')
+                                \nav_item('/confirma_usuario', 'Editar Perfil')
                                
                               ]) 
                          ])

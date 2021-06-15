@@ -36,7 +36,9 @@ http:location(webfonts, root(webfonts), []).
 :- http_handler(root(.), login('') , []).
 :- http_handler(root(administrador), tabelas_adm , []).
 :- http_handler(root(equipe), equipe , []).
+:- http_handler(root(equipe_adm), equipe_adm , []).
 :- http_handler(root(cadastro), cadastro , []).
+:- http_handler(root(confirma_usuario), confere_usuario , []).
 :- http_handler(root(home), home, []).
 
 
@@ -106,6 +108,14 @@ http:location(webfonts, root(webfonts), []).
 /*************************************
 *   ROTAS RECEBEM CADASTRO "EDIÇÃO"
 **************************************/
+:- http_handler('/editarUsuarioAdm', editar_user_adm(Method),
+                [ method(Method),
+                  methods([post]) ]).
+
+:- http_handler('/confere_usuario', recebe_confere_usuario(Method),
+                [ method(Method),
+                  methods([post]) ]).
+
 :- http_handler('/editarUsuario', editar_user(Method),
                 [ method(Method),
                   methods([post]) ]).
@@ -137,6 +147,12 @@ http:location(webfonts, root(webfonts), []).
 /*************************************
 *   ROTAS RECEBEM ID PARA "EDIÇÃO"
 **************************************/
+:- http_handler( root(useradm/editar/Id), edita_usuario_adm(Id), []).
+:- http_handler( root(useradm/apagar/Id), apaga_usuario(Id), []).
+
+:- http_handler( root(user/editar/Id), edita_usuario_user(Id), []).
+%:- http_handler( root(user/apagar/Id), apaga_usuario(Id), []).
+
 :- http_handler( root(user/editar/Id), edita_usuario_adm(Id), []).
 :- http_handler( root(user/apagar/Id), apaga_usuario(Id), []).
 

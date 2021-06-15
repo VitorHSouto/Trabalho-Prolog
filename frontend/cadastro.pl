@@ -7,23 +7,23 @@ cadastro(_Pedido) :-
         [h1([class='row mx-3 p'],'Cadatrar Usuario'), p([],[]),
             form([action='/recebeCadastro', method='POST'],
             [
-                \cadastro_form
+                \cadastro_form('','')
             ]),
             p(['Ja possui uma conta? ',
                     a([ href('/'),
                         class(['primary-link','text-decoration-none'])],'Fazer Login')])
         ]).
 
-cadastro_form -->
+cadastro_form(Nome,Email) -->
     html(   div([],[
             %%% Nome
             div([class='form-floating mb-3'], [
-                input([ type=textarea, class='form-control', style='max-width:350px', id='floatingInputGrid',placeholder='name@example.com',name=nome]),
+                input([ type=textarea, class='form-control', style='max-width:350px', value=Nome, id='floatingInputGrid',placeholder='Joao',name=nome]),
                         label([for='floatingInputGrid'],'Nome') 
             ]),
             %%% Email
             div([class='form-floating mb-3'], [
-                input([ type=email, class='form-control', style='max-width:350px', id='floatingInputGrid',placeholder='name@example.com',name=email]),
+                input([ type=email, class='form-control', style='max-width:350px', value=Email, id='floatingInputGrid',placeholder='name@example.com',name=email]),
                         label([for='floatingInputGrid'],'Email') 
             ]),
             %%% Senha
@@ -55,7 +55,7 @@ recebe_cadastro(post, Pedido) :-
     usuario_funcao:insere(_,IdUser,IdFunc),
     login('',_).
 
-editar_user(post, Pedido) :-
+editar_user_adm(post, Pedido) :- %% Irá ser chamado quando um ADM modificar um usuario
     http_read_data(Pedido,
                     [id=AtomId, nome=AtomNome, email=AtomEmail, senha=Senha, funcao=Funcao, submit='Enviar']
                     , []),
@@ -67,3 +67,14 @@ editar_user(post, Pedido) :-
     usuario:atualiza_senha(Id,Senha),
     funcao:atualiza(IdFunc,Funcao),
     tabelas_adm(_).
+
+editar_user(post, Pedido) :- %% Irá ser chamado quando um usario modificar o seu proprio usuario
+    http_read_data(Pedido,
+                    [id=AtomId, nome=AtomNome, email=AtomEmail, senha=Senha, submit='Enviar']
+                    , []),
+    atom_string(AtomNome, Nome),
+    atom_string(AtomEmail, Email),    
+    atom_number(AtomId, Id),
+    usuario:atualiza(Id,Nome,Email),
+    usuario:atualiza_senha(Id,Senha),
+    home(_).
