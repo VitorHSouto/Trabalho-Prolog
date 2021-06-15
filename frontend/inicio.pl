@@ -3,46 +3,32 @@
 /* html_requires  */
 :- use_module(library(http/html_head)).
 
+
+
 home(_Pedido) :-
     reply_html_page(
         bootstrap,
-        [ title('Gestao de Viagens')],
-        [h1([class='row mx-3'],'Proposta de desenvolvimento de software para gestao de viagens da DEAD/UFVJM - SIGEV'),
-        nav([class='navbar navbar-expand-lg navbar-light bg-light'],
+        [ 
+          title('Gestao de Viagens')],
         [
-          div([class('container-fluid')],
-          [
-            a([class(['navbar-brand mb-0 h1'])], 'SIGEV'),
-            div([],[
-                button([class='navbar-toggler', type='button', data-bs-toggle='collapse', data-bs-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation'],
-                [span([class='navbar-toggler-icon'],[])
-                ]),
-                div([class='collapse navbar-collapse', id='navbarNavDropdown'],
-                [
-                  ul([class='nav justify-content-center'],
-                  [
-                    li([class='nav-item'],
-                    [
-                      a([class='nav-link', href='/'], 'Home')
-                    ]),
-                    li([class='nav-item'],
-                    [
-                      a([class='nav-link', href='/equipe'], 'Equipe')
-                    ]),
-                    li([class='nav-item'],
-                    [
-                      a([class='nav-link', href='/'], 'Editar Perfil')
-                    ]),
-                    li([class='nav-item'],
-                    [
-                      a([class='nav-link', href='/alocacao'], 'Requisitar veiculo')
-                    ])
-                ])
-              ])
-            ])
-          ])
-        ])
+          \html_requires(css('custom.css')),
+          \html_requires(css('entrada.css')),
+          \navbar_user('navbar'),
+             \titulo_da_pagina('Proposta de desenvolvimento de software para gestao de viagens da DEAD/UFVJM - SIGEV')
+         
+
         ]).
+
+titulo_da_pagina(Titulo) -->
+    html( div( class('container py-5'),
+               div(class('d-flex'),
+                   div(class('text-center align-items-center w-100 py-4'),
+                       h1('display-3', Titulo))))).
+
+
+
+
+
 
 
 

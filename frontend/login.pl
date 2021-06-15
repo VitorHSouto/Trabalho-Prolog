@@ -2,7 +2,8 @@ login(Mensage,_Pedido) :-
     reply_html_page(
         bootstrap,
         [title('Login')],
-        [h1([class='row mx-3 p'],'Login'), p([],[]),
+        [
+            h1([class='row mx-3 p'],'Login'), p([],[]),
             p([class="text-danger"],Mensage),
             form([action='/recebeLogin', method='POST'],[
                 %%% Email

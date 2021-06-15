@@ -5,15 +5,24 @@ body
     width: 100%;
     height: 100%;
     margin: 0 auto;
-    color: #404E67;
+    color: #000000;
     background: #F5F7FA;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 
 
 
 .tabular {
-    color: #404E67;
+    color: #000000;
     background: #F5F7FA;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
+
+@font-face {
+    font-family: Roboto;
+    src: url(https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap);
+  }
+
+  div {
+    font-family: Roboto;
+  }
