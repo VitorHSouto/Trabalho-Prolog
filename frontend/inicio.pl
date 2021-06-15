@@ -25,6 +25,12 @@ titulo_da_pagina(Titulo) -->
                    div(class('text-center align-items-center w-100 py-4'),
                        h1('display-3', Titulo))))).
 
+titulo_da_tabela(Titulo) -->
+    html( div( class('container py-3'),
+               div(class('d-flex'),
+                   div(class('text-center align-items-center w-75 py-3'),
+                       h1('display-2', Titulo))))).
+
 
 
 
