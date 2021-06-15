@@ -18,7 +18,8 @@
                 frontend(tabelasAdm),
                 frontend(editar_usuario),
                 frontend(navbar),
-                frontend(pgEquipe)
+                frontend(pgEquipe),
+                frontend(pgEquipeAdm)
               ],                           /**/
               [ silent(true),              /**/
                 if(not_loaded) ]).         /**/

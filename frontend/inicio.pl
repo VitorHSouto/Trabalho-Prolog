@@ -14,7 +14,7 @@ home(_Pedido) :-
           \html_requires(css('custom.css')),
           \html_requires(css('entrada.css')),
           \navbar_user('navbar'),
-             \titulo_da_pagina('Proposta de desenvolvimento de software para gestao de viagens da DEAD/UFVJM - SIGEV')
+          \titulo_da_pagina('Proposta de desenvolvimento de software para gestao de viagens da DEAD/UFVJM - SIGEV')
          
 
         ]).

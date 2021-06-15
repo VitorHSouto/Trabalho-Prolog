@@ -125,7 +125,7 @@ form_alocacao(DSaida,HSaida,DRetorno,Obs) -->
                 div([class='col-md-2'],
                    input([class='btn btn-success', style='width: 150px',name=submit, type=submit, value='Enviar'], [])),
                 div([class='col-md-2'], 
-                    [a([class='btn btn-primary', href='/', style='width: 150px'], 'Voltar ao inicio')])
+                    [a([class='btn btn-primary', href='/home', style='width: 150px'], 'Voltar ao inicio')])
                 ]),
             br([],[])
             ])
