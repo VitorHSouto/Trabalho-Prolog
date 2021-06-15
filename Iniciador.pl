@@ -16,7 +16,8 @@
                 frontend(login),
                 frontend(cadastro),
                 frontend(tabelasAdm),
-                frontend(editar_usuario)
+                frontend(editar_usuario),
+                frontend(navbar)
               ],                           /**/
               [ silent(true),              /**/
                 if(not_loaded) ]).         /**/
