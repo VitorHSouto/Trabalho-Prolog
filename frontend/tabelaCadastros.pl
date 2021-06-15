@@ -50,11 +50,11 @@ linhaUser(Id, Nome, Funcao, Email, AcoesUser):-
 
 acoesUser(Id, Campo):-
     Campo = [ a([ class('text-success'), title('Alterar'),
-                  href('/user/editar/~w' - Id),
+                  href('/useradm/editar/~w' - Id),
                   'data-toggle'(tooltip)],
                 [ \lapis ]),
               a([ class('text-danger ms-1'), title('Excluir'),
-                    href('/user/apagar/~w' - Id),
+                  href('/useradm/apagar/~w' - Id),
                   'data-toggle'(tooltip)],
                 [ \lixeira ])
             ].
