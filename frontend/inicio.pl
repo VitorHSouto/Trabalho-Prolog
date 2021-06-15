@@ -12,18 +12,22 @@ home(_Pedido) :-
         [
           div([class('container-fluid')],
           [
-            a([class(['navbar-brand']), href(['/'])], 'SIGEV'),
+            a([class(['navbar-brand mb-0 h1'])], 'SIGEV'),
             div([],[
                 button([class='navbar-toggler', type='button', data-bs-toggle='collapse', data-bs-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation'],
                 [span([class='navbar-toggler-icon'],[])
                 ]),
                 div([class='collapse navbar-collapse', id='navbarNavDropdown'],
                 [
-                  ul([class='nav-bar'],
+                  ul([class='nav justify-content-center'],
                   [
                     li([class='nav-item'],
                     [
-                      a([class='nav-link', href='/'], 'Equipe')
+                      a([class='nav-link', href='/'], 'Home')
+                    ]),
+                    li([class='nav-item'],
+                    [
+                      a([class='nav-link', href='/equipe'], 'Equipe')
                     ]),
                     li([class='nav-item'],
                     [
@@ -31,7 +35,7 @@ home(_Pedido) :-
                     ]),
                     li([class='nav-item'],
                     [
-                      a([class='nav-link', href='/form6'], 'Requisitar veiculo')
+                      a([class='nav-link', href='/alocacao'], 'Requisitar veiculo')
                     ])
                 ])
               ])
