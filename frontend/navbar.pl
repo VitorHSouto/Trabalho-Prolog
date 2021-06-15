@@ -61,7 +61,7 @@ navbar_adm(_Pedido) -->
 
 
                                 ]),
-                                \nav_item('/equipe', 'Equipe'),
+                                \nav_item('/equipe_adm', 'Equipe'),
                                 \nav_item('/', 'Editar Perfil')
                                
                               ]) 
