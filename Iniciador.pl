@@ -15,7 +15,8 @@
                 frontend(veiculo),
                 frontend(login),
                 frontend(cadastro),
-                frontend(tabelasAdm)
+                frontend(tabelasAdm),
+                frontend(editar_usuario)
               ],                           /**/
               [ silent(true),              /**/
                 if(not_loaded) ]).         /**/

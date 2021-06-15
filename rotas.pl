@@ -106,6 +106,10 @@ http:location(webfonts, root(webfonts), []).
 /*************************************
 *   ROTAS RECEBEM CADASTRO "EDIÇÃO"
 **************************************/
+:- http_handler('/editarUsuario', editar_user(Method),
+                [ method(Method),
+                  methods([post]) ]).
+
 :- http_handler('/editarF1', editar_form1(Method),
                 [ method(Method),
                   methods([post]) ]).
@@ -133,6 +137,9 @@ http:location(webfonts, root(webfonts), []).
 /*************************************
 *   ROTAS RECEBEM ID PARA "EDIÇÃO"
 **************************************/
+:- http_handler( root(user/editar/Id), edita_usuario_adm(Id), []).
+:- http_handler( root(user/apagar/Id), apaga_usuario(Id), []).
+
 :- http_handler( root(locs/editar/Id), editarLocs(Id), []).
 :- http_handler( root(locs/apagar/Id), apagarLocs(Id), []).
 
