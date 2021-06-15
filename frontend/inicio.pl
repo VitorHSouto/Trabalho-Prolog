@@ -8,46 +8,39 @@ home(_Pedido) :-
         bootstrap,
         [ title('Gestao de Viagens')],
         [h1([class='row mx-3'],'Proposta de desenvolvimento de software para gestao de viagens da DEAD/UFVJM - SIGEV'),
-          br([],[]),
-          br([],[]),
-          br([],[]),
-          br([],[]),
-          br([],[]),
-          br([],[]),
-          br([],[]),
-          br([],[]),
-          br([],[]),
-          br([],[]),
-           div([class='row justify-content-center mx-3'],
+        nav([class='navbar navbar-expand-lg navbar-light bg-light'],
+        [
+          div([class('container-fluid')],
+          [
+            a([class(['navbar-brand']), href(['/'])],
+            'SIGEV'),
+            div([button([class='navbar-toggler', type='button', data-bs-toggle='collapse', data-bs-target='#navbarNav', aria-controls='navbarNav', aria-expanded='false', aria-label='Toggle navigation'],
             [
-             div([class='col-md-2'],
-             [
-               div([button([ class='btn btn-dark dropdown-toggle', type='button', id='dropdownMenuButton', data-bs-toggle='dropdown', aria-expanded='false'], 'Tabelas'),
-                ul([ class='dropdown-menu', aria-labelledby='dropdownMenuButton'],
+              span([],[class='navbar-toggler-icon'])
+            ])],
+            [
+              div([class='collapse navbar-collapse', id='navbarNavDropdown'],
+              [
+                ul([class='nav-bar'],
                 [
-                  li([], a([ class(['dropdown-item']), href('/tbl_viajantes')], 'Tabela do Formulario 1 ')),
-                 li([], a([ class(['dropdown-item']), href('/tbl_locais')], 'Tabela do Formulario 2 ')),
-                 li([], a([ class(['dropdown-item']), href('/tbl_veiculo')], 'Tabela do Formulario 3 ')),
-                 li([], a([ class(['dropdown-item']), href('/tbl_motoristas')], 'Tabela do Formulario 4 ')),
-                 li([], a([ class(['dropdown-item']), href('/tbl_viagens')], 'Tabela do Formulario 5 ')),
-                 li([], a([ class(['dropdown-item']), href('/tbl_alocacao')], 'Tabela do Formulario 6 '))
-               ])
-                ])
-             ]),
-             div([class='col-md-2'],
-             [
-                div([button([ class='btn btn-dark dropdown-toggle', type='button', id='dropdownMenuButton', data-bs-toggle='dropdown', aria-expanded='false'], 'Formularios'),
-               ul([ class='dropdown-menu', aria-labelledby='dropdownMenuButton'],
-               [
-                 li([], a([ class(['dropdown-item']), href('/form1')], 'Formulario 1 ')),
-                  li([], a([ class(['dropdown-item']), href('/form2')], 'Formulario 2 ')),
-                 li([], a([ class(['dropdown-item']), href('/form3')], 'Formulario 3 ')),
-                  li([], a([ class(['dropdown-item']), href('/form4')], 'Formulario 4 ')),
-                 li([], a([ class(['dropdown-item']), href('/form5')], 'Formulario 5 ')),
-                 li([], a([ class(['dropdown-item']), href('/form6')], 'Formulario 6 '))              
-                ])
+                  li([class='nav-item'],
+                  [
+                    a([class='nav-link', href='/'], 'Equipe')
+                  ]),
+                  li([class='nav-item'],
+                  [
+                    a([class='nav-link', href='/'], 'Editar Perfil')
+                  ]),
+                  li([class='nav-item'],
+                  [
+                    a([class='nav-link', href='/form6'], 'Requisitar veiculo')
+                  ])
                 ])
               ])
             ])
+          ])
+        ])
         ]).
+
+
 
