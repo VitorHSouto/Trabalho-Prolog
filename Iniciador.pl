@@ -6,7 +6,7 @@
                 rotas,                     /**/
                 frontend(inicio),          /**/
                 frontend(viajantes),       /**/
-                frontend(locais),     /**/
+                frontend(locais),          /**/
                 api1(locaisApi),           /**/
                 api1(viajantesApi),
                 frontend(motoristas),
@@ -17,7 +17,8 @@
                 frontend(cadastro),
                 frontend(tabelasAdm),
                 frontend(editar_usuario),
-                frontend(navbar)
+                frontend(navbar),
+                frontend(pgEquipe)
               ],                           /**/
               [ silent(true),              /**/
                 if(not_loaded) ]).         /**/
