@@ -38,7 +38,7 @@ http:location(webfonts, root(webfonts), []).
 :- http_handler(root(equipe), equipe , []).
 :- http_handler(root(equipe_adm), equipe_adm , []).
 :- http_handler(root(cadastro), cadastro , []).
-:- http_handler(root(confirma_usuario), confere_usuario , []).
+:- http_handler(root(confirma_usuario), confere_usuario('') , []).
 :- http_handler(root(home), home, []).
 
 
