@@ -41,14 +41,6 @@ http:location(webfonts, root(webfonts), []).
 :- http_handler(root(confirma_usuario), confere_usuario('') , []).
 :- http_handler(root(home), home, []).
 
-
-:- http_handler(root(form1), form1 , []).
-:- http_handler(root(form2), form2 , []).
-:- http_handler(root(form3), form3 , []).
-:- http_handler(root(form4), form4 , []).
-:- http_handler(root(form5), form5 , []).
-:- http_handler(root(form6), form6 , []).
-
 /********************************
 *   ROTAS FORMULÁRIOS
 *********************************/

@@ -9,7 +9,7 @@ tbl_cadastros(_Pedido) :-
             [
                 div([class='col-md-2'],
                 [
-                    a([class='btn btn-primary', href='/', style='width: 150px'], 'Voltar ao inicio')])
+                    a([class='btn btn-primary', href='/administrador', style='width: 150px'], 'Voltar ao inicio')])
             ])
         ]).
 

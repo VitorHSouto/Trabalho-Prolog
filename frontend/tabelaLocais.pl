@@ -20,7 +20,7 @@ tabela_locais -->
     html(
             div([class='row justify-content-center mx-3'],[
                 div([class='d-flex justify-content-end mb-1'], 
-                    [a([class='btn btn-primary', href='/form2', style='width: 80px'], 'Novo')]),
+                    [a([class='btn btn-primary', href='/locais', style='width: 80px'], 'Novo')]),
                 table([class='table table-striped table-bordered table-condensed table-hover'],
                     [
                         thead([], [
@@ -70,7 +70,7 @@ editarLocs(AtomId,_Pedido) :-
         bootstrap,
         [title('Atualiza Cadastro Locais')],
         [
-            h1([class='row mx-3 p'],'Formul�rio 2'), p([],[]),
+            h1([class='row mx-3 p'],'Formulario 2'), p([],[]),
             h2([class='row mx-5 px-5 w-50 text-primary'],'Cadastrar locais'), p([],[]),
             form([action='/editarF2', method='POST'],
                   [ div([class='row justify-content-start mx-3'],
@@ -95,14 +95,14 @@ editarLocs(AtomId,_Pedido) :-
                           [
                           div([class='col'],[div([class='form-floating mb-3'],
                               [ input([type=textarea, class='form-control', style='max-width: 400px', id='floatingInputGrid',value=End,name=address]),
-                                label([for='floatingInputGrid'],'Endere��o') ]) ])
+                                label([for='floatingInputGrid'],'Endereco') ]) ])
                           ]),
                     div([class='row justify-content-start mx-3'],
                        [
                        div([class='col-md-2'],
                           input([class='btn btn-success', style='width: 150px',name=submit, type=submit, value='Enviar'],
                                 [])),
-                       div([class='col-md-2'], [a([class='btn btn-primary', href='/', style='width: 150px'], 'Voltar ao início')])
+                       div([class='col-md-2'], [a([class='btn btn-primary', href='/administrador', style='width: 150px'], 'Voltar ao inicio')])
                        ])
                                                 ])
         ])

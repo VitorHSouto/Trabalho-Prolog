@@ -9,7 +9,7 @@ tbl_viajantes(_Pedido) :-
             [
                 div([class='col-md-2'],
                 [
-                    a([class='btn btn-primary', href='/', style='width: 150px'], 'Voltar ao inicio')])
+                    a([class='btn btn-primary', href='/administrador', style='width: 150px'], 'Voltar ao inicio')])
             ])
         ]).
 
@@ -17,7 +17,7 @@ tabela_viajantes -->
     html(
             div([class='row justify-content-center mx-3'],[
             div([class='d-flex justify-content-end mb-1'], 
-                [a([class='btn btn-primary', href='/form1', style='width: 80px'], 'Novo')]),
+                [a([class='btn btn-primary', href='/viajantes', style='width: 80px'], 'Novo')]),
             table([class='table table-striped table-bordered table-condensed table-hover'],
                 [
                     thead([], [
@@ -72,8 +72,8 @@ editarViajantes(AtomId,_Pedido) :-
     (viajantes(Id, Cpf, Nome, Funcao, Email, Senha, _Nvl_acesso) ->
     reply_html_page(
             bootstrap,
-            [title('Editar Formul�rio 1')],
-            [h1([class='row mx-3 p'],'Formul�rio 1'), p([],[]),
+            [title('Editar Formulario 1')],
+            [h1([class='row mx-3 p'],'Formulario 1'), p([],[]),
             h2([class='row mx-5 px-5 w-50 text-primary'],'Cadastrar viajantes'), p([],[]),
             form([action='/editarF1', method='POST'],
                 [ div([class='row justify-content-start mx-3'],
@@ -106,12 +106,12 @@ editarViajantes(AtomId,_Pedido) :-
                             [option([id='floatingSelectGrid', value='Colaborador'], 'Coloborador Enventual'),
                                 option([id='floatingSelectGrid', value='Servidor'], 'Servidor'),
                                 option([id='floatingSelectGrid', value='Tutor'], 'Tutor') ]),
-                            label([class='mx-2',for="floatingSelectGrid",value=Funcao],'Escolha a func�o') ]),
+                            label([class='mx-2',for="floatingSelectGrid",value=Funcao],'Escolha a funcao') ]),
                         p([class='col-md-2 mb-3 p-3'],
                         input([class='btn btn-success', style='width: 150px',name=submit, type=submit, value='Enviar'],
                                 []))
                         ]),
-                    p([class='mx-3 px-2'], [a([class='btn btn-primary', href='/', style='width: 200px'], 'Voltar ao início')])
+                    p([class='mx-3 px-2'], [a([class='btn btn-primary', href='/administrador', style='width: 200px'], 'Voltar ao inicio')])
                                                     ])]
         )
         ).

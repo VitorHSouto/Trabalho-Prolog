@@ -12,7 +12,7 @@ tbl_alocacao(_Pedido) :-
             [
                 div([class='col-md-2'],
                 [
-                    a([class='btn btn-primary', href='/', style='width: 150px'], 'Voltar ao inicio')])
+                    a([class='btn btn-primary', href='/home', style='width: 150px'], 'Voltar ao inicio')])
             ])
         ]).
 
@@ -20,7 +20,7 @@ tabela_alocacao -->
     html(
             div([class='row justify-content-center mx-3'],[
             div([class='d-flex justify-content-end mb-1'], 
-                [a([class='btn btn-primary', href='/form6', style='width: 80px'], 'Novo')]),
+                [a([class='btn btn-primary', href='/alocacao', style='width: 80px'], 'Novo')]),
             table([class='table table-striped table-bordered table-condensed table-hover'],
                 [
                     thead([], [

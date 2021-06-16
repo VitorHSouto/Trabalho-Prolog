@@ -9,7 +9,7 @@ tbl_motoristas(_Pedido) :-
             [
                 div([class='col-md-2'],
                 [
-                    a([class='btn btn-primary', href='/', style='width: 150px'], 'Voltar ao inicio')])
+                    a([class='btn btn-primary', href='/administrador', style='width: 150px'], 'Voltar ao inicio')])
             ])
         ]).
 
@@ -17,7 +17,7 @@ tabela_motoristas -->
     html(
             div([class='row justify-content-center mx-3'],[
                 div([class='d-flex justify-content-end mb-1'], 
-                    [a([class='btn btn-primary', href='/form4', style='width: 80px'], 'Novo')]),
+                    [a([class='btn btn-primary', href='/motoristas', style='width: 80px'], 'Novo')]),
                 table([class='table table-striped table-bordered table-condensed table-hover'],
                     [
                         thead([], [
@@ -68,7 +68,7 @@ editarMotoristas(AtomId,_Pedido) :-
         bootstrap,
         [title('Atualiza Cadastro Motoristas')], 
         [
-            h1([class='row mx-3 p'],'Formulário 4'), p([],[]),
+            h1([class='row mx-3 p'],'Formulario 4'), p([],[]),
             h2([class='row mx-5 px-5 w-50 text-primary'],'Cadastrar motoristas'), p([],[]),
             form([action='/editarF4', method='POST'],
                   [ div([class='row justify-content-start mx-3'],
@@ -106,7 +106,7 @@ editarMotoristas(AtomId,_Pedido) :-
                        div([class='col-md-2'],
                           input([class='btn btn-success', style='width: 150px',name=submit, type=submit, value='Enviar'],
                                 [])),
-                       div([class='col-md-2'], [a([class='btn btn-primary', href='/', style='width: 150px'], 'Voltar ao início')])
+                       div([class='col-md-2'], [a([class='btn btn-primary', href='/administrador', style='width: 150px'], 'Voltar ao inicio')])
                        ])
                                                 ])
         ])

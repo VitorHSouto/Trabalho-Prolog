@@ -9,7 +9,7 @@ tbl_veiculo(_Pedido) :-
             [
                 div([class='col-md-2'],
                 [
-                    a([class='btn btn-primary', href='/', style='width: 150px'], 'Voltar ao inicio')])
+                    a([class='btn btn-primary', href='/administrador', style='width: 150px'], 'Voltar ao inicio')])
             ])
         ]).
 
@@ -17,7 +17,7 @@ tabela_veiculos -->
     html(
             div([class='row justify-content-center mx-3'],[
                 div([class='d-flex justify-content-end mb-1'], 
-                    [a([class='btn btn-primary', href='/form3', style='width: 80px'], 'Novo')]),
+                    [a([class='btn btn-primary', href='/veiculo', style='width: 80px'], 'Novo')]),
                 table([class='table table-striped table-bordered table-condensed table-hover'],
                     [
                         thead([], [
@@ -101,7 +101,7 @@ editarVeiculo(AtomId,_Pedido) :-
                         p([class='col-md-2 mb-3 p-3'],
                         input([class='btn btn-success', style='width: 150px',name=submit, type=submit, value='Enviar'],
                                 [])),
-                       div([class='col-md-2'], [a([class='btn btn-primary', href='/', style='width: 150px'], 'Voltar ao inicio')])
+                       div([class='col-md-2'], [a([class='btn btn-primary', href='/administrador', style='width: 150px'], 'Voltar ao inicio')])
                        ])	
                                                     ])
         ])
