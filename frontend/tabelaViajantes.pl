@@ -27,7 +27,6 @@ tabela_viajantes -->
                             th([scope="col"], "Nome"),
                             th([scope="col"], "Funcao"),
                             th([scope="col"], "Email"),
-                            th([scope="col"], "Senha"),
                             th([scope="col"], "Nivel de acesso")
                         ]) ]),
                     tbody([], \corpo_tabela_via)
@@ -42,17 +41,16 @@ corpo_tabela_via -->
                         td(Nome),
                         td(Funcao),
                         td(Email),
-                        td(Senha),
                         td(Nvl_acesso),
                         td(Acoes)]),
-                 linhaV(Id, Cpf, Nome, Funcao, Email, Senha, Nvl_acesso, Acoes),
+                 linhaV(Id, Cpf, Nome, Funcao, Email, _, Nvl_acesso, Acoes),
                  Linhas )
     },
     html(Linhas).
 
 
-linhaV(Id, Cpf, Nome, Funcao, Email, Senha, Nvl_acesso, AcoesV):-
-    viajantes(Id, Cpf, Nome, Funcao, Email, Senha, Nvl_acesso),
+linhaV(Id, Cpf, Nome, Funcao, Email, _, Nvl_acesso, AcoesV):-
+    viajantes(Id, Cpf, Nome, Funcao, Email, _Senha, Nvl_acesso),
     acoesV(Id,AcoesV).
 
 
