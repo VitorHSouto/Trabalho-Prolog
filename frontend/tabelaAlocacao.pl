@@ -81,9 +81,20 @@ editarAlocacao(AtomId,_Pedido) :-
             h2([class='row mx-5 px-5 w-50 text-primary'],'Editar Alocacao'), p([],[]),
             form([action='/editarF6', method='POST'], 
             [
-                div([class='col'],[div([class='form-floating mb-3'],
-                            [ input([type=text, class='form-control', style='max-width:75px', id='floatingInputGrid',value=AtomId,readonly,name=id]),
-                            label([for=id],'Id') ]) ]),
-                \form_alocacao(DSaida,HSaida,DRetorno,Obs)
+                br([],[]),
+                br([],[]),
+                br([],[]), 
+                div([class='row justify-content-center mx-3'],
+                [
+                    div([class='col-md-4'],
+                    [
+                        div([class='form-floating mb-3'],
+                            [ 
+                                input([type=text, class='form-control', style='max-width:75px', id='floatingInputGrid',value=AtomId,readonly,name=id]),
+                                label([for=id],'Id') 
+                            ]) 
+                    ]),
+                    \form_alocacao(DSaida,HSaida,DRetorno,Obs)
+                ])
             ])
         ]).

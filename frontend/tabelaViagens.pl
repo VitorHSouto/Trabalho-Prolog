@@ -92,16 +92,27 @@ editarViagem(AtomId,_Pedido) :-
         Siga, Scpd, KmInicio, KmFinal, HSaida, HChegada, KmUtilizado, Obs, _, _, _)) ->
     reply_html_page(
         bootstrap,
-        [title('Atualiza Cadastro Alocacao')],
+        [title('Atualiza Cadastro Viagens')],
         [
             h1([class='row mx-3 p'],'Formulario 5'), p([],[]),
             h2([class='row mx-5 px-5 w-50 text-primary'],'Editar viagem'), p([],[]),
             form([action='/editarF5', method='POST'], 
             [
-                div([class='col'],[div([class='form-floating mb-3'],
-                            [ input([type=text, class='form-control', style='max-width:75px', id='floatingInputGrid',value=AtomId,readonly,name=id]),
-                            label([for=id],'Id') ]) ]),
-                \form_viagens(Id, _, _, _, _, _, _, _, _, _,
-                Siga, Scpd, KmInicio, KmFinal, HSaida, HChegada, KmUtilizado, Obs, _, _, _)
+                br([],[]),
+                br([],[]),
+                br([],[]), 
+                div([class='row justify-content-center mx-3'],
+                [
+                    div([class='col-md-4'],
+                    [
+                        div([class='form-floating mb-3'],
+                        [ 
+                            input([type=text, class='form-control', style='max-width:75px', id='floatingInputGrid',value=AtomId,readonly,name=id]),
+                            label([for=id],'Id') 
+                        ]) 
+                    ]),
+                    \form_viagens(Id, _, _, _, _, _, _, _, _, _,
+                    Siga, Scpd, KmInicio, KmFinal, HSaida, HChegada, KmUtilizado, Obs, _, _, _)
+                ])
             ])
         ]).
